@@ -390,3 +390,57 @@ void quicksort(int[] nums, int start, int end) {
 
 ## Comparable
 
+### Sort based on factors
+
+**Problem statement**
+Given an array of N integers, Sort the data in ascending order of count of factors. If two numbers have same number of factors, return them in ascending order of their values.
+
+**Example**
+```
+A                = [9, 3, 10, 6, 4]
+count of factors = [3, 2,  4, 4, 3]
+Output           = [3, 4, 9, 10, 6]
+```
+
+**Using Comparator**
+1. Define a compare function as below
+```java
+// Should return -ve if count of factors of A < count of factors of B
+// Should return +ve if count of factors of B < count of factors of A
+// Should return 0 otherwise
+int compare(int A, int B) {
+	int factorsA = getFactors(A);
+	int factorsB = getFactors(B);
+
+	if (factorsA < factorsB) {
+		return -1;
+	} else if (factorsA > factorsB) {
+		return 1;
+	} else {
+		return Integer.compare(A, B);
+	}
+}
+
+private int getFactors(int a) {
+	int count = 0;  
+	for (int i=1; i*i <= a; i++) {  
+		if (a % i == 0) {  
+			if (i * i == a) count += 1;  
+			else count += 2;  
+		}  
+	}  
+	return count;
+}
+```
+2. Use the `sort` function as below
+```java
+
+void sortByFactors(int[] A) {
+	Arrays.sort(A, new Comparator<Integer>(){
+		@Override
+		public int compare(Integer a, Integer b) {
+			return compare(a, b); // Use the above defined method.
+		}
+	});
+}
+```
