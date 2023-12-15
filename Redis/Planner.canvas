@@ -1,0 +1,21 @@
+{
+	"nodes":[
+		{"id":"5eb2afda7d112971","type":"text","text":"Module 0: \n\t- Course objectives\n\t- Target Audience\n\t- What you will learn","x":-820,"y":-926,"width":250,"height":120,"color":"2"},
+		{"id":"360660a769f92dec","type":"text","text":"Module 1: Redis introduction\n- What is Redis?\n- Why Choose Redis?\n- Understanding Key-Value Stores and Data Structures\n- Installing and Setting Up Redis Server\n- Interacting with Redis Clients (e.g., ioredis, Jedis)","x":-760,"y":-674,"width":295,"height":324,"color":"2"},
+		{"id":"7fa9dcabf188f469","type":"text","text":"Module 2: Fundamental Data Structures and Operations\n-  Strings: Basic Manipulation, Append, Set, Get, Increment, Decrement\n- Lists: Push, Pop, LIndex, LRange, List Operations\n- Sets: Adding and Removing Members, Intersections, Unions, Differences\n- Hashes: Adding and Retrieving Key-Value Pairs, HSET, HGET, HGetAll\n- Sorted Sets: Ordered Lists with Scores, ZADD, ZRANGE, ZREM","x":-435,"y":-500,"width":360,"height":300,"color":"2"},
+		{"id":"4d55c73905ce696a","type":"text","text":"Module 3: Caching with Redis\n- Caching Strategies: Read-Through, Write-Through, Write-Behind\n- Cache Invalidation Techniques\n- Optimizing Caching Performance with Expiration and Least Recently Used (LRU)\n","x":-20,"y":-400,"width":250,"height":360,"color":"2"},
+		{"id":"7c90fce920eabdd1","type":"text","text":"Module 4: Advanced Features and Functionality\n- Pub/Sub: Real-time Messaging and Data Broadcasting\n- Lua Scripting: Extending Redis Functionality and Automation\n- Transactions: Maintaining Data Consistency in Multiple Operations\n- HyperLogLog: Probabilistic Counting for Large Datasets\n- Geolocation with Redis Geospatial Features","x":260,"y":-533,"width":384,"height":366,"color":"2"},
+		{"id":"2a41e251601e7ea6","type":"text","text":"Module 5: Configuration, Management, and Security\n- Persistence Options: RDB and AOF\n- Replication for High Availability\n- Security Best Practices: Authentication, Authorization, Data Encryption\n- Monitoring and Performance Optimization Techniques\n","x":740,"y":-580,"width":400,"height":266,"color":"2"},
+		{"id":"cf806b6ac023882f","type":"text","text":"Module 6: Case Studies and Real-World Applications\n\n- Building a Real-Time Chat Application with Redis and Pub/Sub\n- Caching User Accounts and Product Data for E-commerce Platforms\n- Implementing Leader Election and Distributed Locking with Redis","x":880,"y":-964,"width":400,"height":196,"color":"2"},
+		{"id":"5f6e658d3e0b80d8","type":"text","text":"Redis course","x":40,"y":-1440,"width":250,"height":114,"color":"3"}
+	],
+	"edges":[
+		{"id":"46ff21bd2140b2ba","fromNode":"5f6e658d3e0b80d8","fromSide":"bottom","toNode":"5eb2afda7d112971","toSide":"top"},
+		{"id":"31cee62525ebb3b1","fromNode":"5f6e658d3e0b80d8","fromSide":"bottom","toNode":"360660a769f92dec","toSide":"top"},
+		{"id":"fda5663d43725fe3","fromNode":"5f6e658d3e0b80d8","fromSide":"bottom","toNode":"7fa9dcabf188f469","toSide":"top"},
+		{"id":"8b008290b5bd0a91","fromNode":"5f6e658d3e0b80d8","fromSide":"bottom","toNode":"4d55c73905ce696a","toSide":"top"},
+		{"id":"0a2fa081db313112","fromNode":"5f6e658d3e0b80d8","fromSide":"bottom","toNode":"7c90fce920eabdd1","toSide":"top"},
+		{"id":"ffe0def1a1b68a35","fromNode":"5f6e658d3e0b80d8","fromSide":"bottom","toNode":"2a41e251601e7ea6","toSide":"top"},
+		{"id":"121bd7b7a1b1c733","fromNode":"5f6e658d3e0b80d8","fromSide":"bottom","toNode":"cf806b6ac023882f","toSide":"top"}
+	]
+}

@@ -1,0 +1,57 @@
+{
+  "settings": {
+    "migrated": 3,
+    "iconPacksPath": ".obsidian/icons",
+    "fontSize": 16,
+    "emojiStyle": "none",
+    "iconColor": null,
+    "recentlyUsedIcons": [
+      "RiProjectorFill",
+      "FasPersonSkiing",
+      "RiQuestionAnswerFill",
+      "RiChat1Fill",
+      "FasFolder"
+    ],
+    "recentlyUsedIconsSize": 5,
+    "rules": [],
+    "extraMargin": {
+      "top": 0,
+      "right": 4,
+      "bottom": 0,
+      "left": 0
+    },
+    "iconInTabsEnabled": false,
+    "iconInTitleEnabled": false,
+    "iconInFrontmatterEnabled": false,
+    "iconsBackgroundCheckEnabled": false,
+    "iconsInNotesEnabled": true
+  },
+  "Kanban": "FasFolder",
+  "DSA": {
+    "iconName": "FasFolder",
+    "inheritanceIcon": "FasFolder"
+  },
+  "Redis": "FasFolder",
+  "Kanban/My Work items Kanban.md": "RiCheckDoubleFill",
+  "DSA/Things to remember.md": "FasBrain",
+  "DSA/1-D array.md": "RiFileListLine",
+  "DSA/2-D Array.md": "FasRectangleList",
+  "DSA/Bit Manipulation.md": "FasArrowUp19",
+  "DSA/Combinatorics.md": "FasPlusMinus",
+  "DSA/Hashing.md": "FasHashtag",
+  "DSA/Interview Questions.md": "RiParentFill",
+  "DSA/Modular Arithmetic and GCD.md": "FasDivide",
+  "DSA/Prefix Sum Carry forward Sliding Window.md": "FasPeopleCarryBox",
+  "DSA/Prime numbers.md": "RiBallPenFill",
+  "DSA/Recursion.md": "FasRepeat",
+  "DSA/Sorting.md": "FasSort",
+  "DSA/Strings.md": "RiThreadsLine",
+  "Redis/Course contents.md": "RiTable2",
+  "Redis/Planner.canvas": "FasStairs",
+  "Behaviour Round Questions": "FasFolder",
+  "Behaviour Round Questions/1 - Introduction.md": "RiQuestionAnswerFill",
+  "Behaviour Round Questions/2 - Getting to know you questions.md": "RiChat1Fill",
+  "Behaviour Round Questions/3 - Project and experience questions.md": "RiProjectorFill",
+  "Behaviour Round Questions/4 - Situational Questions.md": "FasPersonSkiing",
+  "Travel plans": "FasFolder"
+}

@@ -1,0 +1,179 @@
+{
+  "main": {
+    "id": "60f7ddc3e37d7ede",
+    "type": "split",
+    "children": [
+      {
+        "id": "1a2d4799deb9462e",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "25fcc5e92b55c4bc",
+            "type": "leaf",
+            "state": {
+              "type": "empty",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "770402bfe0c5e2c3",
+    "type": "split",
+    "children": [
+      {
+        "id": "e09712b98ec0f7f3",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "bf0693f63d0ea446",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "6c44898d3d537e99",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "38311dc9e868b0ae",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 387.51103591918945
+  },
+  "right": {
+    "id": "05def596bee7bffb",
+    "type": "split",
+    "children": [
+      {
+        "id": "8d29755a1c84954f",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "a1b555114494ae53",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "824cf46a04fc4453",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "e716801b102c5a24",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "739aeb2aa4af07b9",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {}
+            }
+          }
+        ],
+        "currentTab": 3
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false
+    }
+  },
+  "active": "25fcc5e92b55c4bc",
+  "lastOpenFiles": [
+    "DSA/Sorting.md",
+    "Behaviour Round Questions/4 - Situational Questions.md",
+    "Travel plans/Untitled.md",
+    "Travel plans",
+    "Behaviour Round Questions/TODO.md",
+    "Behaviour Round Questions/3 - Project and experience questions.md",
+    "Behaviour Round Questions/1 - Introduction.md",
+    "Behaviour Round Questions/2 - Getting to know you questions.md",
+    "DSA/Things to remember.md",
+    "Redis/Module 0 - Course objective.md",
+    "Redis/Planner.canvas",
+    "Redis/Course contents.md",
+    "Behaviour Round Questions",
+    "Kanban/My Work items Kanban.md",
+    "DSA/2-D Array.md",
+    "DSA/1-D array.md",
+    "DSA/Bit Manipulation.md",
+    "DSA/Interview Questions.md",
+    "Kanban",
+    "2023-12-14.md",
+    "DSA/Hashing.md",
+    "DSA/Modular Arithmetic and GCD.md",
+    "DSA/Recursion.md",
+    "DSA/images/tower_of_hanoi.png",
+    "DSA/Strings.md",
+    "DSA/Prime numbers.md",
+    "DSA/Prefix Sum Carry forward Sliding Window.md",
+    "DSA/Combinatorics.md",
+    "DSA/images",
+    "DSA 21e0c258ddf247fb8d1b619948ab7b29/Modular Arithmetic and GCD 6dd94bfda8b14464a87904e163d9826a.md",
+    "DSA 21e0c258ddf247fb8d1b619948ab7b29",
+    "DSA",
+    "Untitled.canvas",
+    "Redis"
+  ]
+}
