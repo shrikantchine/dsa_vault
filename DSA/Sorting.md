@@ -444,3 +444,48 @@ void sortByFactors(int[] A) {
 	});
 }
 ```
+
+### B closest points
+
+**Problem statement** 
+Given an array of points `points[i] = [xi, yi]`, return B closest points to a given origin.
+
+**Solution**
+- Distance between two points defined on a 2-D plain is defined as 
+         $\sqrt{a^2+b^2}$
+- Sort all the points on the basis of their distance from origin. The first B elements can be returned as answer.
+
+```java
+
+int[][] bClosest(int[][] points, int[] origin, int B) {
+	
+}
+
+```
+
+### Largest number by concatenating numbers
+
+**Problem statements** 
+Given a list of non negative numbers, arrange them in such a way that they form the larges number
+
+**Example**
+Given A = [3, 30, 34, 5, 9]
+Ans        = [9, 5, 34, 3, 30] (because the largest number is 9534330)
+
+**Approach**
+Use Comparator and compare to sort as below
+
+```java
+void formLargest(int[] nums) {
+	Arrays.sort(nums, new Comparator<Integer>() {
+		@Override
+		public int compare(Integer a, Integer b) {
+			String s1 = Integer.toString(a);
+			String s2 = Integer.toString(b);
+			int c1 = Integer.parseInt(s1 + s2);
+			int c2 = Integer.parseInt(s2 + s1);
+			return Integer.compare(c1, c2);
+		}
+	});
+}
+```
