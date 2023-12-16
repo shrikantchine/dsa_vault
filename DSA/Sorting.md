@@ -448,7 +448,7 @@ void sortByFactors(int[] A) {
 ### B closest points
 
 **Problem statement** 
-Given an array of points `points[i] = [xi, yi]`, return B closest points to a given origin.
+Given an array of points `points[i] = [xi, yi]`, return B closest points to a given origin. Given origin point = `[0, 0]`
 
 **Solution**
 - Distance between two points defined on a 2-D plain is defined as 
@@ -457,8 +457,20 @@ Given an array of points `points[i] = [xi, yi]`, return B closest points to a gi
 
 ```java
 
-int[][] bClosest(int[][] points, int[] origin, int B) {
-	
+ArrayList<ArrayList<Integer>> bClosest(
+		ArrayList<ArrayList<Integer>> points, int B) {
+	Collections.sort(points, this::compare);
+	ArrayList<ArrayList<Integer>> ans = new ArrayList<>();
+	for (int i=0; i<B; i++) ans.add(points.get(i));
+	return ans;
+}
+
+private int compare(ArrayList<Integer> a, ArrayList<Integer> b) {
+	int x1 = a.get(0), y1 = a.get(1);
+	int x2 = b.get(0), y2 = b.get(1);
+	double d1 = Math.pow(x1, 2) + Math.pow(y1, 2);
+	double d2 = Math.pow(x2, 2) + Math.pow(y2, 2);
+	return (int) (d1 - d2);
 }
 
 ```
