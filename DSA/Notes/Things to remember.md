@@ -7,17 +7,17 @@ debugInConsole: false # Print debug info in Obsidian console
 ```
 ## Things to remember
 
-**✔ How many numbers in the range [a, b]**
+### ✔ How many numbers in the range [a, b]
 
 `b-a+1`
 
-**✔ Arithmetic progression**
+### Arithmetic progression
 
 Defined as a series where difference between two consecutive elements is same. Formula to calculate the sum
 
 `(n) * (n+1)/2`
 
-**✔ Geometric progression**
+### Geometric progression
 
 A geometric progression is a sequence in which any element after the first is obtained by multiplying the preceding element by a constant called the common ratio which is denoted by r
 
@@ -76,7 +76,9 @@ Example:
 - a + 0 = a ⇒ 0 is the identity value for summation operation
 - a - 0 = a ⇒ 0 is the identity value for subtraction operation
 
+## GCD and LCM
 
+s
 ## 🌟 Important Links
 
 - 💡[yangshun tech-interview-handbook](https://github.com/yangshun/tech-interview-handbook)

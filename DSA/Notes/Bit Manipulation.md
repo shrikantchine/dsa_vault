@@ -184,7 +184,7 @@ MSB is used as sign bit. - The value `1` represents `-ve` numbers - The value `0
 
 Problems with this method of representation: - Negative and positive numbers do not add up to zero `10 :   0 1 0 1 0    - 10 :   1 1 0 1 0    ----------------------       0 : x 0 0 1 0 0       // X represents extra bit that cannot be filled in 5 bit integer. Thus ignored.` - Zero and Negative zero have different binary representations `0 : 0 0 0 0 0    -0 : 1 0 0 0 0`
 
-### 2’s compleiment representation
+### 2’s complement representation
 
 ### How to compute negative number’s representation:
 

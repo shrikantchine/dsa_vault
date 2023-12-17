@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "DSA/Notes/Things to remember.md",
+                "file": "DSA/Love Babbar/Arrays.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "DSA/Notes/Things to remember.md",
+                "file": "DSA/Love Babbar/Arrays.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "DSA/Notes/Things to remember.md",
+                "file": "DSA/Love Babbar/Arrays.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "DSA/Notes/Things to remember.md"
+                "file": "DSA/Love Babbar/Arrays.md"
               }
             }
           }
@@ -148,9 +148,12 @@
   },
   "active": "25fcc5e92b55c4bc",
   "lastOpenFiles": [
-    "DSA/Notes/Modular Arithmetic and GCD.md",
-    "DSA/Notes/1-D array.md",
+    "DSA/Notes/Bit Manipulation.md",
     "DSA/Love Babbar/Arrays.md",
+    "DSA/Notes/Modular Arithmetic and GCD.md",
+    "DSA/Notes/Interview Questions.md",
+    "DSA/Notes/Things to remember.md",
+    "DSA/Notes/1-D array.md",
     "Kanban/My Work items Kanban.md",
     "DSA/Notes",
     "DSA/Love Babbar",
@@ -162,14 +165,11 @@
     "Behaviour Round Questions/3 - Project and experience questions.md",
     "Behaviour Round Questions/1 - Introduction.md",
     "Behaviour Round Questions/2 - Getting to know you questions.md",
-    "DSA/Notes/Things to remember.md",
     "Redis/Module 0 - Course objective.md",
     "Redis/Planner.canvas",
     "Redis/Course contents.md",
     "Behaviour Round Questions",
     "DSA/Notes/2-D Array.md",
-    "DSA/Notes/Bit Manipulation.md",
-    "DSA/Notes/Interview Questions.md",
     "Kanban",
     "2023-12-14.md",
     "DSA/Notes/Hashing.md",

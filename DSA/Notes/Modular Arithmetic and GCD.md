@@ -38,9 +38,8 @@ r ⇒ Remainder
     b = q2 * m + r2
     
     where q1, q2 are quotients and r1, r2 are remainders.
-    
     Now, we can substitute these values into the equation (a + b) % m:
-    
+
     (a + b) % m = (q1 * m + r1 + q2 * m + r2) % m
     
     Using the properties of modular arithmetic, we can distribute the modulo operator:
@@ -105,3 +104,4 @@ void modSum(int[] A, int M) {
 	return ans;
 }
 ```
+
