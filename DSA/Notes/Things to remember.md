@@ -5,7 +5,7 @@ maxLevel: 0 # Include headings up to the speficied level
 includeLinks: true # Make headings clickable
 debugInConsole: false # Print debug info in Obsidian console
 ```
-# ⭐Things to remember
+## Things to remember
 
 **✔ How many numbers in the range [a, b]**
 
@@ -28,7 +28,7 @@ sum = a * (r^N - 1) / (r-1)
     condition: r != 1
 ```
 
-# ⭐ Scientific Notation
+## Scientific Notation
 
 In java, scientific notations are a way to represent floating point literals. It allows you to represent a number as a coefficient and power of 10. The general form is
 
@@ -43,7 +43,7 @@ Example:
     10e2 = 10 * 10^2 = 1000
 ```
 
-# ⭐Handling input constraints in DSA problems
+## Handling input constraints in DSA problems
 
 - A typical 1Ghz computer handles 109 iterations per second. As a standard, 1Ghz CPU is allocated by Online plateforms like Leetcode
     
@@ -58,7 +58,7 @@ Example:
 | N < 20 | O(N), O(N^2), O(N^3), O(2^N) |
 | 10^10 >= N > 10^9 | O(log n), O(sqrt n) |
 
-# ⭐ Prime vs Composite numbers
+## Prime vs Composite numbers
 
 | Prime numbers | Composite number |
 | --- | --- |
@@ -67,7 +67,7 @@ Example:
 - [Find all prime number below given integer n](../src/math/SieveOfEratosthenes.java)
 - [Find if a number is composite](../src/math/IsCompositeNumber.java)
 
-# ⭐ What is an identity value ?
+## What is an identity value ?
 
 Identity of any operation is defined as any CONSTANT value that does not change the value upon the application of that operation.
 
@@ -76,7 +76,8 @@ Example:
 - a + 0 = a ⇒ 0 is the identity value for summation operation
 - a - 0 = a ⇒ 0 is the identity value for subtraction operation
 
-# 🌟Important Links
+
+## 🌟 Important Links
 
 - 💡[yangshun tech-interview-handbook](https://github.com/yangshun/tech-interview-handbook)
 - 💡[Typing practice](https://www.keybr.com/)

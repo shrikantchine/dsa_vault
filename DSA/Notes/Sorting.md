@@ -46,6 +46,7 @@ void rearrangeDigits(int[] nums) {
 ```
 
 ### When to use Counting sort ?
+
 - Counting sort cannot be used when
 	- Element size is unknown.
 	- Element size is huge.
@@ -387,6 +388,10 @@ void quicksort(int[] nums, int start, int end) {
 	quicksort(nums, pi+1, end);
 }
 ```
+
+## Quick Select Algorithm
+
+
 
 ## Comparable
 

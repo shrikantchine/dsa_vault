@@ -6,7 +6,7 @@ kanban-plugin: basic
 
 ## TODO
 
-- [ ] Update Date/Year in Certifications/Degrees in resume
+- [ ] Understand and make notes for quick select algorithm
 
 
 ## Doing
@@ -17,6 +17,7 @@ kanban-plugin: basic
 ## Done
 
 **Complete**
+- [x] Update Date/Year in Certifications/Degrees in resume
 - [x] Update the resume
 
 

@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "DSA/Sorting.md",
+                "file": "DSA/Notes/Things to remember.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "DSA/Sorting.md",
+                "file": "DSA/Notes/Things to remember.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "DSA/Sorting.md",
+                "file": "DSA/Notes/Things to remember.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "DSA/Sorting.md"
+                "file": "DSA/Notes/Things to remember.md"
               }
             }
           }
@@ -134,8 +134,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -149,7 +148,13 @@
   },
   "active": "25fcc5e92b55c4bc",
   "lastOpenFiles": [
-    "DSA/Sorting.md",
+    "DSA/Notes/Modular Arithmetic and GCD.md",
+    "DSA/Notes/1-D array.md",
+    "DSA/Love Babbar/Arrays.md",
+    "Kanban/My Work items Kanban.md",
+    "DSA/Notes",
+    "DSA/Love Babbar",
+    "DSA/Notes/Sorting.md",
     "Behaviour Round Questions/4 - Situational Questions.md",
     "Travel plans/Untitled.md",
     "Travel plans",
@@ -157,26 +162,23 @@
     "Behaviour Round Questions/3 - Project and experience questions.md",
     "Behaviour Round Questions/1 - Introduction.md",
     "Behaviour Round Questions/2 - Getting to know you questions.md",
-    "DSA/Things to remember.md",
+    "DSA/Notes/Things to remember.md",
     "Redis/Module 0 - Course objective.md",
     "Redis/Planner.canvas",
     "Redis/Course contents.md",
     "Behaviour Round Questions",
-    "Kanban/My Work items Kanban.md",
-    "DSA/2-D Array.md",
-    "DSA/1-D array.md",
-    "DSA/Bit Manipulation.md",
-    "DSA/Interview Questions.md",
+    "DSA/Notes/2-D Array.md",
+    "DSA/Notes/Bit Manipulation.md",
+    "DSA/Notes/Interview Questions.md",
     "Kanban",
     "2023-12-14.md",
-    "DSA/Hashing.md",
-    "DSA/Modular Arithmetic and GCD.md",
-    "DSA/Recursion.md",
+    "DSA/Notes/Hashing.md",
+    "DSA/Notes/Recursion.md",
     "DSA/images/tower_of_hanoi.png",
-    "DSA/Strings.md",
-    "DSA/Prime numbers.md",
-    "DSA/Prefix Sum Carry forward Sliding Window.md",
-    "DSA/Combinatorics.md",
+    "DSA/Notes/Strings.md",
+    "DSA/Notes/Prime numbers.md",
+    "DSA/Notes/Prefix Sum Carry forward Sliding Window.md",
+    "DSA/Notes/Combinatorics.md",
     "DSA/images",
     "DSA 21e0c258ddf247fb8d1b619948ab7b29/Modular Arithmetic and GCD 6dd94bfda8b14464a87904e163d9826a.md",
     "DSA 21e0c258ddf247fb8d1b619948ab7b29",
