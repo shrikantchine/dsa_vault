@@ -192,5 +192,6 @@ Space complexity: O(1)
 
 - Given an increasing-decreasing array, find the max element.
 - An increasing-decreasing array is where the elements first increase and then decrease.
+
 Example:
 [1, 3, 5, 10, 15, 12, 8, 6]
