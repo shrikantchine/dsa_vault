@@ -1,5 +1,7 @@
 ---
-tags: 
+tags:
+  - 1-Darray
+  - 2d-array
 aliases:
   - 1-D Array
 ---
