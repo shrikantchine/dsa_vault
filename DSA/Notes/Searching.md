@@ -6,7 +6,7 @@
 
 - Binary search is a method of searching an element where after constant amount of comparison, the search space is reduced to half.
 - Binary Search is not only applicable for sorted data but for any data where the property 1 holds.
-
+- *Searching in linear data-structure can only be done linearly or using binary search.*
 
 > [!NOTE] Does binary search only apply to sorted data ?
 > No. Check the question (Find unique element below)
@@ -188,3 +188,9 @@ int findUnique(int[] arr) {
 Time complexity: O(log n)
 Space complexity: O(1)
 
+### Find max from increasing-decreasing array
+
+- Given an increasing-decreasing array, find the max element.
+- An increasing-decreasing array is where the elements first increase and then decrease.
+Example:
+[1, 3, 5, 10, 15, 12, 8, 6]

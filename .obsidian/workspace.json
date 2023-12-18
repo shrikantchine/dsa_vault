@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "1cd953c1b09f4ae5",
+        "id": "d6314a76ed34e106",
         "type": "tabs",
         "children": [
           {
-            "id": "a26d0e3a1f585721",
+            "id": "c4126d1c4bce7e36",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -148,7 +148,7 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "bf0693f63d0ea446",
+  "active": "c4126d1c4bce7e36",
   "lastOpenFiles": [
     "DSA/Notes/Searching.md",
     "DSA/Notes/Sorting.md",
