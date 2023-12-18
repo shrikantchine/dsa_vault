@@ -4,16 +4,16 @@
     "type": "split",
     "children": [
       {
-        "id": "1a2d4799deb9462e",
+        "id": "1cd953c1b09f4ae5",
         "type": "tabs",
         "children": [
           {
-            "id": "25fcc5e92b55c4bc",
+            "id": "a26d0e3a1f585721",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "DSA/Love Babbar/Arrays.md",
+                "file": "DSA/Notes/Searching.md",
                 "mode": "source",
                 "source": false
               }
@@ -69,7 +69,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 318.5
+    "width": 241.5,
+    "collapsed": true
   },
   "right": {
     "id": "05def596bee7bffb",
@@ -85,7 +86,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "DSA/Love Babbar/Arrays.md",
+                "file": "DSA/Notes/Searching.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +103,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "DSA/Love Babbar/Arrays.md",
+                "file": "DSA/Notes/Searching.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +126,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "DSA/Love Babbar/Arrays.md"
+                "file": "DSA/Notes/Searching.md"
               }
             }
           }
@@ -134,7 +135,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -146,10 +148,12 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "25fcc5e92b55c4bc",
+  "active": "bf0693f63d0ea446",
   "lastOpenFiles": [
-    "DSA/Notes/Bit Manipulation.md",
+    "DSA/Notes/Searching.md",
+    "DSA/Notes/Sorting.md",
     "DSA/Love Babbar/Arrays.md",
+    "DSA/Notes/Bit Manipulation.md",
     "DSA/Notes/Modular Arithmetic and GCD.md",
     "DSA/Notes/Interview Questions.md",
     "DSA/Notes/Things to remember.md",
@@ -157,7 +161,6 @@
     "Kanban/My Work items Kanban.md",
     "DSA/Notes",
     "DSA/Love Babbar",
-    "DSA/Notes/Sorting.md",
     "Behaviour Round Questions/4 - Situational Questions.md",
     "Travel plans/Untitled.md",
     "Travel plans",

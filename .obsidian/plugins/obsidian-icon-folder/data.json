@@ -6,11 +6,11 @@
     "emojiStyle": "none",
     "iconColor": null,
     "recentlyUsedIcons": [
+      "FasMagnifyingGlass",
       "FasA",
       "RiProjectorFill",
       "FasPersonSkiing",
-      "RiQuestionAnswerFill",
-      "RiChat1Fill"
+      "RiQuestionAnswerFill"
     ],
     "recentlyUsedIconsSize": 5,
     "rules": [],
@@ -54,5 +54,6 @@
   "DSA/Notes/Recursion.md": "FasRepeat",
   "DSA/Notes/Sorting.md": "FasSort",
   "DSA/Notes/Strings.md": "RiThreadsLine",
-  "DSA/Love Babbar/Arrays.md": "FasA"
+  "DSA/Love Babbar/Arrays.md": "FasA",
+  "DSA/Notes/Searching.md": "FasMagnifyingGlass"
 }
