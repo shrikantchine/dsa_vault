@@ -295,7 +295,7 @@ int searchInRotated(int[] arr, int k) {
 	while (start <= end) {
 		int mid = start + ((end-start)/2);
 		if (arr[mid] == k) return k;
-		if (arr[start] < arr[mid]) {
+		if (arr[start] <= arr[mid]) {
 			if (arr[start] <= k && arr[mid] > k) {
 				end = mid-1;
 			} else {
@@ -316,3 +316,82 @@ int searchInRotated(int[] arr, int k) {
 Time complexity => O(log n)
 Space complexity => O(1)
 
+### Find Square root
+
+**Problem statement**
+Given an integer N, find the value of square root of N.
+
+> This problem statement belongs to category of *Binary Search on Answer space*
+
+Example:
+
+| N                            | Answer |
+|------------------------------|--------|
+| 36                           | 6      |
+| 49                           | 7      |
+| 52                           | 7      |
+| Any number in range [50, 63] | 7      |
+| 64                           | 8      |
+
+**Brute Force**
+For the range `[1, N]`, calculate `i*i`
+
+```java
+int sqroot(int N) {
+	for (int i=1; i<N; i++) {
+		int sq = i*i;
+		if (sq == N) return i;
+		if (sq < N) return i-1;
+	}
+	return -1;
+}
+```
+**Complexity analysis**
+Time complexity => O($\sqrt N$) $\because$ At most the loop runs till $\sqrt N + 1$ 
+Space complexity => O(1)
+
+**Observation**
+- For a given number N, $\sqrt N$ is in the range `[1, N]`
+- In the brute force, as the value of `i` increases, so does the values of $\sqrt N$
+
+
+> [!NOTE] When Binary search on answer space can be used?
+> 1. Answer space is continuous
+> 2. Answer space is sorted
+
+**Solution**
+- Define the answer space as `[start, end] = [1, N]`
+- Find the mid element. 
+- Square the mid element
+- Check if it is equal to N, if yes, return it.
+- If the square is greater than N, reject the right answer space by reducing the answer space `[start, mid-1]`
+- Else reject the left answer space by changing the answer space to `[mid+1, end]`
+
+```java
+int sqroot(int N) {
+	int start = 1, end = N;
+
+	while (start <= end) {
+		int mid = start + ((end-start)/2);
+		int square = mid * mid;
+		// No need for this because it is handled in <= condition
+		// if (square == N) return mid;
+		if (square <= N) {
+			int tmp = (mid+1) * (mid+1);
+			if (tmp < N) {
+				start = mid+1;
+			} else {
+				return mid;
+			}
+		} else {
+			end = mid-1;
+		}
+	}
+
+	return -1;
+}
+```
+
+**Complexity analysis**
+Time complexity => O(log N)
+Space complexity => O(1)
