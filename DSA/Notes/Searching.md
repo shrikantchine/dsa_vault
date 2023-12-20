@@ -393,5 +393,6 @@ int sqroot(int N) {
 ```
 
 **Complexity analysis**
+
 Time complexity => O(log N)
 Space complexity => O(1)
