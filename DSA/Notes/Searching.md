@@ -11,6 +11,13 @@
 > [!NOTE] Does binary search only apply to sorted data ?
 > No. Check the question (Find unique element below)
 
+### Structure of the binary search program
+- Define a search space `[start, end]`
+- Loop using the condition `(start <= end)`
+- Find the mid element using `mid = start + ((end-start)/2)`
+- Check if the middle element is the answer
+- Check if we need to go left
+- Check if we need to go right
 
 ### Find in sorted array
 
@@ -195,3 +202,117 @@ Space complexity: O(1)
 
 Example:
 [1, 3, 5, 10, 15, 12, 8, 6]
+
+
+### Find local minima
+
+**Problem statement** 
+Given an array of N distinct elements, find any local minima
+Local minima is defined by below condition
+$A[i] < A[i-1] and A[i] > A[i+1]$
+
+**Brute force**
+For all elements, check if the previous and following element is greater than it while checking for boundaries.
+
+```java
+int findMinima(int[] arr) {
+	for (int i=0; i<arr.length; i++) {
+		if ((i == 0 || arr[i]<arr[i-1]) && (i == (arr.length-1) || arr[i] < arr[i+1])) {
+			return arr[i];
+		}
+	}
+}
+```
+**Complexity analysis**
+Time complexity => O(n)
+Space complexity => O(1)
+
+**Binary Search**
+
+- Find the mid element.
+- If it is local minima, return it.
+- If not, check if mid-1 is smaller than mid element, if so, move the search space to [start, mid-1]
+- If mid+1 is smaller, the move the search space to [mid+1, end]
+
+*The reason this works, if we can find a smaller element on either side, that side is bound to have a local minima*
+
+```java
+int findLocalMinima(int[] arr) {
+	int start = 0, N = arr.length, end = N-1;
+
+	while (start <= end) {
+		int mid = start + ((end-start)/2);
+		if ((mid == 0 || arr[mid] < arr[mid-1]) && (mid == (n-1) || arr[mid] < arr[mid+1])) {
+			return arr[mid];
+		}
+		else if (arr[mid-1] < arr[mid]) {
+			end = mid-1;
+		} else {
+			start = mid+1;
+		}
+	}
+	return -1;
+}
+```
+**Complexity analysis**
+Time complexity => O(log n)
+Space complexity => O(1)
+
+> [!NOTE] Local minima when duplicate elements are allowed
+> Think of a solution
+
+### Search in sorted rotated array
+
+**Problem statement**
+Given an array of N integer sorted and rotated. Find the given element K.
+
+**Observations**
+- Any sorted rotated array can be divided into two arrays (`A1` and `A2`) which are sorted. `concat(A1, A2) = givenarray`
+- All elements in `A2` will be smaller than all elements in `A1`
+- Below cases can be considered
+	- The mid element is part of `A1`=> `A[mid] > A[end]`
+		- All elements `[start, mid]` will be increasing
+		- So, go to left if `A[start] <= k < A[mid]` else go right
+	- *ELSE* The mid element is part of `A2` => `A[mid] < A[end]`
+		- All elements in range `[mid, end]` will be increasing
+		- So, go to right if `A[mid] < k <= A[end]` else go left
+	- Concatenating `A1` ad `A2` may for a sorted array. Can be checked using `A[0] < A[N-1]`
+- 
+
+**Binary Search approach 1**
+- Find where the array is rotated 
+- Then run Binary search against the part of array that contains the element
+
+> [!NOTE] HOME WORK
+> Write code
+
+**Binary Search Approach 2**
+
+```java
+int searchInRotated(int[] arr, int k) {
+	int start = 0, end = arr.length-1;
+
+	while (start <= end) {
+		int mid = start + ((end-start)/2);
+		if (arr[mid] == k) return k;
+		if (arr[start] < arr[mid]) {
+			if (arr[start] <= k && arr[mid] > k) {
+				end = mid-1;
+			} else {
+				start = mid+1;
+			}
+		} else {
+			if (arr[mid] < k && arr[end] >= k) {
+				start = mid +1;
+			} else {
+				end = mid-1;
+			}
+		}
+	}
+	return -1;
+} 
+```
+**Complexity analysis**
+Time complexity => O(log n)
+Space complexity => O(1)
+
