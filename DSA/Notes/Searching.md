@@ -378,7 +378,7 @@ int sqroot(int N) {
 		// if (square == N) return mid;
 		if (square <= N) {
 			int tmp = (mid+1) * (mid+1);
-			if (tmp < N) {
+			if (tmp > N) {
 				start = mid+1;
 			} else {
 				return mid;
