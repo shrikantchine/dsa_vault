@@ -245,7 +245,7 @@ int findLocalMinima(int[] arr) {
 		if ((mid == 0 || arr[mid] < arr[mid-1]) && (mid == (n-1) || arr[mid] < arr[mid+1])) {
 			return arr[mid];
 		}
-		else if (arr[mid-1] < arr[mid]) {
+		else if (mid == 0 || arr[mid-1] < arr[mid]) {
 			end = mid-1;
 		} else {
 			start = mid+1;
@@ -396,3 +396,163 @@ int sqroot(int N) {
 
 Time complexity => O(log N)
 Space complexity => O(1)
+
+### Ath Magical Number
+
+**Problem statement** 
+Given three integer A, B and C, find the Ath magical number. A magical number is a number which is divisible by B or C or both.
+
+**Example**
+Given A = 8,, B = 2, C=3 
+=> Answer = 12 (Number are 2, 3, 4, 6, 8, 9, 10, 12)
+
+**Brute force**
+- Initialise current value as 1 and counter as 0
+- Check if it is divisible by B or C, if yes, increment the counter.
+- Increment the current value by and check divisibility with B or C.
+- If counter == A, return the number
+
+```java
+int athMagical(int A, int B, int C) {
+	int counter = 0, current = 1;
+	while (counter < A) {
+		if (current % B == 0 || current % C == 0) {
+			counter++;
+		}
+		current++;
+	}
+	return current;
+}
+```
+
+**Complexity Analysis**
+- Consider the inputs from the examples taken
+- 8<sup>th</sup> no divisible by 2 is `8*2`
+- 8<sup>th</sup> no divisible by 3 is `8*3`
+- There can be overlap if we consider 8th number divisible by 2 and 3. But to upper bound this(Overlap will not exist if C=20), we will find the 8th magic number in `8*2` iterations
+
+*Therefore, time complexity: O(A * min(B, C))*
+
+**Optimised Approach using Binary Search**
+
+- We can define the answer space as `[1, min(B, C)*A]`
+	- It is continuous
+	- It is sorted
+	- The pattern is increasing. Meaning going to left decreases the number of magic numbers and vice versa
+- If we can find the number of magic numbers present to the left of a given number in the range, then we can decide to go either left and right and reduce the answer space to half as per binary search algorithm.
+- How to check the number of magical numbers less than or equal to a given number X
+	$\frac X B +\frac X C - \frac X {B \space and \space C}$
+	
+	$OR\space\space \frac X B +\frac X C - \frac X {LCM(B,C)}$
+	
+- How to check the mid element 
+	- Find the count using above approach
+	- Check if mid element itself is a magical number, if yes, return
+	- Otherwise, move to left because we will always find the Ath middle element on the left side.
+
+```java
+int athMagicalNumber(int A, int B, int C) {
+	int start = 1, end = Math.min(B, C)*A;
+	int lcmBC = lcm(B, C);
+	while (start <= end) {
+		int mid = start + ((end-start)/2);
+		int count = (mid/B) + (mid/C) - (mid/lcmBC);
+
+		if (count == A) {
+			if (mid % B == 0 || mid % C == 0) return mid;
+			end = mid - 1;
+		} else if (count < A) {
+			end = mid - 1;
+		} else {
+			start = mid + 1;
+		}
+	}
+}
+```
+
+**Complexity**
+Time complexity: O(A * Min(B, C))
+Space complexity: O(1)
+
+### Painter's partition
+
+**Problem statement**
+Given N boards with their lengths as array A = [L0, L1, L2....L(N-1)]
+And given K painters, each painter takes 1 unit of time to paint 1 unit of length.
+Calculate the min amount of time in which all boards can be painted.
+
+==Note==
+1. Two painters cannot share a board to paint.
+2. A painter will only paint a continuous board
+
+**Example**
+
+1. A=[4],  k = 1, Ans  = 4 (1 painter takes 4 units to paint a board of length 4)
+2. A = [3, 5, 1, 7, 8, 2, 5, 3, 10, 1, 4, 7, 5, 4, 6], K = 3
+3. A = [10, 20, 30, 40], k=2 => Ans = 60
+
+**Observations**
+- If we have infinite number of painters, the min time taken will be `max(board lengths)`
+- If we have 1 painter, the min time taken will be `sum(length of boards)`
+- So, the range of ans `[max length, sum of all lengths]`. This forms the answer space
+- how to figure out whether to go left or right => Given an element X, is it possible to paint all boards in X units of time with K painters ?
+	- For each painter, allocate the max amount of time <= X from the boards array
+
+```java
+boolean check(int[] A, int T, int K) {
+	int painters = 1, i = 0;
+
+	while (painters <= K) {
+		int unitsConsumed = 0;
+		while (unitsConsumed <= T) {
+			unitsConsumed += A[i++];
+			if (i == A.length) return true;
+		}
+		painter++;
+	}
+
+	return false;
+}
+
+// OR 
+
+boolean check(int[] A, int T, int K) {
+	int curr_time = T;
+	int count = 1;
+	for (int i=0; i<A.length; i++) {
+		if (A[i] <= curr_time) {
+			curr_time;
+		} else {
+			count++;
+			curr_time = T;
+		}
+		if (count > K) return false;
+	}
+	return true;
+}
+```
+
+- Now we can do binary search using the above answer space and condition to check
+
+```java
+int minTime(int[] A, int k) {
+	int s = max(A);
+	int e = sum(A);
+
+	while (s <= e) {
+		int mid = s + ((e-s)/2);
+		if (check(A, mid, K)) {
+			if (check(A, mid-1, K)) {
+				e = mid -1;
+			}
+			return mid;
+		} else {
+			s = mid+1;
+		}
+	}
+}
+```
+
+**Complexity analysis**
+
+Time complexity = N * log (sum(A) - max(A))

@@ -49,11 +49,11 @@
   "DSA/Notes/Hashing.md": "FasHashtag",
   "DSA/Notes/Interview Questions.md": "RiParentFill",
   "DSA/Notes/Modular Arithmetic and GCD.md": "FasDivide",
-  "DSA/Notes/Prefix Sum Carry forward Sliding Window.md": "FasPeopleCarryBox",
   "DSA/Notes/Prime numbers.md": "RiBallPenFill",
   "DSA/Notes/Recursion.md": "FasRepeat",
   "DSA/Notes/Sorting.md": "FasSort",
   "DSA/Notes/Strings.md": "RiThreadsLine",
   "DSA/Love Babbar/Arrays.md": "FasA",
-  "DSA/Notes/Searching.md": "FasMagnifyingGlass"
+  "DSA/Notes/Searching.md": "FasMagnifyingGlass",
+  "DSA/Notes/Prefix Sum, Carry forward, Sliding Window and Two pointers approach.md": "FasPeopleCarryBox"
 }

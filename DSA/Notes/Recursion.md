@@ -1,6 +1,6 @@
 # Recursion
 
-## ✔️ Tower of Hanoi
+##  Tower of Hanoi
 
 ![Untitled](tower_of_hanoi.png)
 
@@ -48,7 +48,7 @@ static void TOH(int N, String src, String dest, String intermediate) {
 // SC : O(N) => Max number of recursive call is N+1
 ```
 
-# ✔️ Valid Parenthesis
+##  Valid Parenthesis
 
 **************************************Problem statement:************************************** 
 
@@ -90,4 +90,6 @@ void helper(int N, int countOpen, int countClose, String curr) {
 }
 ```
 
-HW. Reduce the space using char array of size 2N
+/TODO . Reduce the space using char array of size 2N
+
+## Backtracking
