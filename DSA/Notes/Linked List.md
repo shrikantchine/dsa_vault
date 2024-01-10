@@ -118,3 +118,38 @@ int size(Node head) {
 **Complexity**
 Time complexity: O(n) where n is length of linked list
 Space complexity: O(1)
+
+### Insert Node
+
+**Problem statement**
+Given a linked list, insert a new node given data K at the index P. Also return the head of the updated linked list.
+
+**Solution**
+```java
+Node insert(Node head, int k, int p) {
+	Node newNode = new Node(k);
+	if (p == 0) {
+		newNode.next = head;
+		head = newNode;
+		return head;
+	}
+	Node curr = head;
+	int i=0;
+	while (curr != null && (i < p-1)) {
+		curr = curr.next;
+		i++;
+	}
+	if (curr == null) {
+		throw new IllegalStateException("Not possible to insert");
+	}
+
+	newNode.next = curr.next;
+	curr.next = newNode;
+
+	return head;
+}
+```
+
+**Complexity**
+Time complexity: O(n) where n is length of linked list
+Space complexity: O(1)
