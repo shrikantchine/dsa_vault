@@ -21,6 +21,13 @@ class Node {
 		this.data;
 		next = null;
 	}
+
+	@Override  
+	public String toString() {  
+	    String x = String.valueOf(data);  
+	    if (next == null) return x;  
+	    return x + " -> " + next;  
+	}
 }
 ```
 
@@ -153,3 +160,69 @@ Node insert(Node head, int k, int p) {
 **Complexity**
 Time complexity: O(n) where n is length of linked list
 Space complexity: O(1)
+
+### Delete an element
+
+**Problem Statement**
+Given a linked list, delete the first occurrence of element K. Return the head of updated linked list.
+
+**Solution**
+```java
+Node delete(Node head, int k) {
+	if (head == null) return null;
+	if (head.data == k) return head.next;
+	
+	Node curr = head, prev = null;
+	while (curr != null) {
+		if (curr.data == k) {
+			prev.next = curr.next;
+			break;
+		}
+		prev = curr;
+		curr = curr.next;
+	}
+
+	return head;
+}
+```
+
+**Complexity**
+Time complexity: O(n) where n is length of linked list
+Space complexity: O(1)
+
+### Reverse a linked list
+
+**Problem statement**
+Given a linked list, reverse it and return the head of reversed linked list.
+
+**Solution**
+```java
+Node reverse(Node head) {
+	Node curr = head, prev = null;
+
+	while (curr != null) {
+		Node tmp = prev;
+		prev = curr;
+		curr = curr.next;
+		prev.next = tmp;
+	}
+
+	return prev;
+}
+```
+
+**Complexity**
+Time complexity: O(n) where n is length of linked list
+Space complexity: O(1)
+
+### Check if linked list is palindrome
+
+**Problem statement**
+Given a linked list, return true if it is a palindrome.
+
+**Solution**
+```java
+boolean isPalindrome(Node head) {
+	
+}
+```
