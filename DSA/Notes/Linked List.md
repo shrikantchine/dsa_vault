@@ -286,10 +286,204 @@ Given a linked list, find the middle element.
 **Solution (Slow and fast pointer approach)**
 ```java
 Node getMiddle(Node head) {
+	if (head == null) return null;
 	Node slow = head, fast = head;
-	while (fast != null && fast.next != null) {
+	while (fast.next != null && fast.next.next != null) {
 		fast = fast.next.next;
 		slow = slow.next;
+	}
+	return slow;
+}
+```
+
+**Complexity**
+Time complexity: O(n) where n is length of linked list
+Space complexity: O(1)
+- Even though the time complexity is O(n), we are using only 1 iteration, which is not possible if we find the length of Linked List and find element at mid index
+
+### Merge two sorted linked list
+
+**Problem statement**
+Given two sorted linked list, merge them in a sorted order and return the head of merged linked
+
+**Solution**
+```java
+Node merge(Node head1, Node head2) {
+	if (head1 == null) return head2;
+	if (head2 == null) return head1;
+
+	Node head = new Node(-1);
+	Node curr = head;
+
+	while (head1 != null || head2 != null) {
+		if (head1.data < head2.data) {
+			curr.next = head1;
+			head1 = head1.next;
+		} else {
+			curr.next = head2;
+			head2 = head2.next;
+		}
+		curr = curr.next;
+	}
+
+	if (head1 != null) curr.next = head1;
+	if (head2 != null) curr.next = head2;
+
+	return head.next;
+}
+```
+
+**Complexity**
+Time complexity: `O(n1 + n2) ` where `n1` and `n2` are lengths of given linked lists
+Space complexity: O(1)
+
+### Merge sort on Linked List
+
+**Problem sort**
+Given a linked list, sort it using merge sort
+
+**Solution**
+```java
+Node mergeSort(Node head) {
+	if (head == null || head.next == null) return head;
+
+	Node mid = getMiddle(head);
+	Node h2 = mid.next;
+	mid.next = null;
+	Node h1 = mergeSort(head);
+	h2 = mergeSort(h2);
+	return merge(h1, h2);
+}
+```
+
+**Complexity**
+- Time complexity  of `getMiddle` is `O(n)`
+- Time complexity of `merge` is `O(n)`
+- Time complexity of recursion `O(log n)`
+- Therefore, total time complexity `O(n log n)`
+
+- Space complexity: Recursion stack space uses `O(log n)`
+
+## Circular linked list
+
+- Circular list is one where last/tail node points back to head of the list
+- Circular list cannot have any node pointing to null.
+- How to figure out if linked list is circular ?
+	- While iterating check `head == current`
+
+![[Pasted image 20240112223932.png]]
+
+## Linked list with a cycle
+
+- Tail node of the linked list points to any node of the linked list.
+
+![[Pasted image 20240112224038.png]]
+
+
+### Detect cycle in a linked list
+
+**Problem statement**
+Given a linked list, check if it contains a cycle.
+
+**Solution**
+```java
+public boolean hasCycle(ListNode head) {
+
+	if (head == null || head.next == null) return false;
+	ListNode slow = head, fast = head;
+	
+	while (fast.next != null && fast.next.next != null) {
+		slow = slow.next;
+		fast = fast.next.next;
+		if (slow == fast) return true;
+	}
+	return false;
+}
+```
+**Complexity**
+Time complexity: O(n) because in two iterations, the slow and next pointers are bound to meet.
+Space complexity: O(1)
+
+### Entry point of the cycle.
+
+**Problem statement**
+Given a cyclic linked list, return the first(start) node of the cycle.
+
+**Solution 1 (Get the length of the cycle)**
+1. Let the slow and fast pointers meet (in the above code) at element `E`.
+2. Take another pointer and move it 1 step further and count steps till it gets back to slow/fast pointer. This gives us the length of length of cycle. Say the length is `L`
+3. Reset the slow and fast pointer  `slow = head, fast = head`
+4. Move the fast pointer `L` times.
+5. Then move the slow and fast pointer simultaneously. Wherever the two pointers meet, is the intersection
+
+```java
+Node intersection(Node head) {
+	Node slow = head, fast = head;
+
+	while (fast.next == null && fast.next.next == null) {
+		fast = fast.next.next;
+		slow = slow.next;
+		if (slow == fast) break;
+	}
+
+	if (fast.next == null || fast.next.next == null) {
+		throw new IllegalStateException("No cycle detected");
+	}
+
+	int lengthOfCycle = 1;
+	fast = fast.next;
+	while (slow != fast) {
+		lengthOfCycle++;
+		fast = fast.next;
+	}
+
+	slow = head, fast = head;
+	for (int i=0; i<lengthOfCycle; i++) {
+		fast= fast.next;
+	}
+
+	while (slow != fast) {
+		slow = slow.next;
+		fast = fast.next;
+	}
+
+	return slow;
+}
+```
+
+**Solution 2**
+
+- Supposed 
+	- distance travelled before the cycle is `x`
+	- Distance inside the cycle `l` (circumference of the circle)
+	- Distance travelled by slow pointer other than `l` is `y`
+- So, Distance travelled by slow pointer = `x + y + kl`
+- Distance travelled by fast pointer = `x + y + ml`
+- But fast pointer travels twice as much distance
+
+```text
+   x + y + kl = 2(x + y + ml)
+=> x+y = (k-2m)l
+```
+- This implies that the the position where slow and fast pointer meet is a multiple of `l`
+- So, similar to above approach, if we reset 1 pointer and move both slow and fast pointer 1 step at a time, they will meet at intersection.
+- In other words, the point where the slow and fast pointer meet, is equal to distance from the head
+
+```java
+Node intersection(Node head) {
+	if (head == null) return null;
+	Node slow = head, fast = slow;
+
+	while (fast.next != null && fast.next.next != null) {
+		fast = fast.next.next;
+		slow = slow.next;
+	}
+
+	if (fast.next != null && fast.next.next != null) return null;
+	slow = head;
+	while (slow != fast) {
+		slow = slow.next;
+		fast = fast.next;
 	}
 	return slow;
 }
