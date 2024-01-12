@@ -5,6 +5,24 @@ Linked List is a non-continuous linear data structure. Below are the advantages
 1. Compared to arrays, it does not have a restriction of being continuous. So even in low continuous memory situations, linked list can be instantiated.
 2. Compared to dynamic arrays, it only uses only the required space. In contrast dynamic arrays double their size which might result in unused space being allocated.
 
+## Commonly used approaches in Linked List
+
+### Previous and Current pointers
+- Define two pointers `prev = null` & `curr = head`
+- At each iteration
+	- `prev` pointer moves to `curr` pointer
+	- `curr` pointer moves 1 step ahead.
+- This approach allows us to keep track of previous pointer in case we need to access it later 
+> Look at the "Insert / Delete in a Linked list"
+
+### Slow and Fast pointer approach
+- Define two pointers `slow` & `fast`
+- At each iteration 
+	- `slow` pointer moves 1 step.
+	- `fast` pointer moves 2 steps.
+- This approach allows us to find the MID element of Linked list in 1 iteration.
+
+> Look at the question "Find MID element" below
 ## How to define ?
 
 - Data is stored in *Node*
@@ -218,11 +236,61 @@ Space complexity: O(1)
 ### Check if linked list is palindrome
 
 **Problem statement**
-Given a linked list, return true if it is a palindrome.
+Given a linked list, return true if it is a palindrome otherwise return false.
 
-**Solution**
+**Solution 1**
+
+1. Make a copy of linked list
+2. Reverse a linked list
+3. Compare both linked list
+**Complexity**
+Time complexity: O(n) where n is length of linked list
+Space complexity: O(1)
+
+**Solution 2**
+1. Break the second half
+2. Reverse the second half
+3. Compare both halves
+
 ```java
-boolean isPalindrome(Node head) {
+public boolean lPalin(ListNode A) {
+	if (A == null) return false;
+	if (A.next == null) return true;
+	ListNode slow = A, fast = A;
+	while (fast != null && fast.next != null && fast.next.next != null) {
+		fast = fast.next.next;
+		slow = slow.next;
+	}
 	
+	ListNode right = slow.next;
+	slow.next = null;	
+	ListNode reversed = reverse(right);
+	ListNode p1 = A, p2 = reversed;
+	while (p1 != null && p2 != null) {
+		if (p1.val != p2.val) return false;
+		p1 = p1.next;
+		p2 = p2.next;
+	}
+	slow.next = reverse(right);
+	return true;
+}
+```
+
+### Find MID of a linked list
+
+**Problem statement**
+Given a linked list, find the middle element.
+- For odd length, the mid element is `(N/2)+1`
+- For even length, the mid is `N/2`
+
+**Solution (Slow and fast pointer approach)**
+```java
+Node getMiddle(Node head) {
+	Node slow = head, fast = head;
+	while (fast != null && fast.next != null) {
+		fast = fast.next.next;
+		slow = slow.next;
+	}
+	return slow;
 }
 ```
