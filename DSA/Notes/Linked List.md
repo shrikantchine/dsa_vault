@@ -488,3 +488,88 @@ Node intersection(Node head) {
 	return slow;
 }
 ```
+
+## Doubly Linked list
+
+- Linked list with both `next` and `previous` pointers
+- The first element is called `head`
+- Last element is called `tail`
+![[Pasted image 20240115212048.png]]
+### Structure of a node
+
+```java
+class Node {
+	int data;
+	Node next;
+	Node prev;
+
+	Node(int x) {
+		data = x;
+		prev = null;
+		next = null;
+	}
+}
+```
+
+### Insert a node
+
+**Problem statement**
+Given a doubly linked list, insert a node with data `x` at position `k` (K will always be a valid)
+
+**Solution**
+```java
+Node insert(Node head, int x, int k) {
+	Node n = new Node(x)
+	if (head == null) {
+		return n; 
+	}
+	if (k == 0) {
+		n.next = head;
+		head.prev = n;
+		return n;
+	}
+	Node curr = head, pre = null;
+	for (int i=0; i<k; i++) {
+		pre = curr;
+		curr = curr.next;
+	}
+	pre.next = n;
+	n.prev = pre;
+	n.next = curr;
+	if (curr != null) {
+		curr.prev = n;
+	}
+	return head;
+}
+```
+**Complexity**
+Time complexity: O(n) where n is the number of nodes in the given list
+Space complexity: O(1)
+
+### Delete a node from doubly linked list
+
+**Problem statement** 
+Given a doubly linked list of length N, delete the first occurrence of data 'x'.
+
+**Solution**
+```java
+Node delete(Node head, int x) {
+	if (head == null) return null;
+	if (head.data = x) return head.next;
+
+	Node curr = head;
+	while (curr != null && curr.data != x) {
+		curr = curr.next;
+	}
+	if (curr == null) return head;
+	curr.prev.next = curr.next;
+	if (curr.next != null) {
+		curr.next.prev = curr.prev;
+	}
+	return head;
+}
+```
+
+**Complexity**
+Time complexity: O(n) where n is the number of nodes in the given list
+Space complexity: O(1)
