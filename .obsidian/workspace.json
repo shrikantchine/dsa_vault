@@ -4,16 +4,16 @@
     "type": "split",
     "children": [
       {
-        "id": "da289f193af25ecf",
+        "id": "99c69767163f043f",
         "type": "tabs",
         "children": [
           {
-            "id": "7899be9e3334e228",
+            "id": "3ec2099cb06dfcc6",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "DSA/Notes/Linked List.md",
+                "file": "DSA/Notes/Stacks & Queues.md",
                 "mode": "source",
                 "source": false
               }
@@ -86,7 +86,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "DSA/Notes/Linked List.md",
+                "file": "DSA/Notes/Stacks & Queues.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -103,7 +103,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "DSA/Notes/Linked List.md",
+                "file": "DSA/Notes/Stacks & Queues.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -126,7 +126,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "DSA/Notes/Linked List.md"
+                "file": "DSA/Notes/Stacks & Queues.md"
               }
             }
           }
@@ -148,12 +148,14 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "7899be9e3334e228",
+  "active": "3ec2099cb06dfcc6",
   "lastOpenFiles": [
+    "DSA/Notes/Stacks & Queues.md",
+    "DSA/Notes/Linked List.md",
+    "Pasted image 20240115225449.png",
     "Pasted image 20240115212048.png",
     "Pasted image 20240112224038.png",
     "Pasted image 20240112223932.png",
-    "DSA/Notes/Linked List.md",
     "Pasted image 20240110213004.png",
     "DSA/Notes/Prefix Sum, Carry forward, Sliding Window and Two pointers approach.md",
     "DSA/Notes/Recursion.md",

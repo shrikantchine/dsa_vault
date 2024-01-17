@@ -555,7 +555,11 @@ Given a doubly linked list of length N, delete the first occurrence of data 'x'.
 ```java
 Node delete(Node head, int x) {
 	if (head == null) return null;
-	if (head.data = x) return head.next;
+	if (head.data = x) {
+		head = head.next;
+		head.prev = null;
+		return head;
+	}
 
 	Node curr = head;
 	while (curr != null && curr.data != x) {
@@ -573,3 +577,73 @@ Node delete(Node head, int x) {
 **Complexity**
 Time complexity: O(n) where n is the number of nodes in the given list
 Space complexity: O(1)
+
+### Least Recently Used (LRU)  Cache
+
+- This is implementation strategy of caching algorithms where if the cache is full, the least recently used element is removed.
+- The steps are as follows
+![[Pasted image 20240115225449.png]]
+
+- So there are three operations that are being performed
+	- Remove the element at random index
+	- Insert at the front
+	- Search an element at random index
+- Comparison on time complexity of linear data structures
+
+|                                       | Array  | Linked List | Doubly linked list |
+|---------------------------------------|--------|-------------|--------------------|
+| Search                                | O(N)   | O(N)        | O(N)               |
+| Insert at front                       | O(N)   | O(1)        | O(1)               |
+| Delete at random index (After search) | O(N)   | O(N)        | O(N)               |
+- So Array is definitely not the solution
+- Searching can be optimised using `HashMap<Integer, Node>` in both Linked list and Doubly linked list
+	- This improves the search for Singly linked list
+	- But delete still remains `O(N)` because we need previous node.
+	- But doubly linked list already has access to previous node. Thus, to build LRU cache
+	
+> So, Doubly linked list wins!!!
+
+```java
+class LRUCache {
+	private static int CAPACITY = 5;
+	Node head;
+	Head tail;
+	HashMap<Integer, Node> hm = new HashMap<>();
+	int size = 0;
+
+	void insert(Integer data) {
+		Node n = new Node(data);
+		if (head == null) {
+			this.head = n;
+		}
+		boolean isAlreadyPresent = hm.containsKey(data);
+		if (isAlreadyPresent) {
+			Node tmp = hm.get(data);
+			if (tmp == head) return;
+			if (tmp.prev != null) {
+				tmp.prev.next = tmp.next;
+			}
+			if (tmp.next != null) {
+				tmp.next.prev = tmp.prev;
+			}
+			tmp.next = head
+			head.prev = tmp;
+			tmp.prev = null;
+			head = tmp;
+		} else {
+			if (size == CAPACITY) {
+				tmp = tail.prev;
+				tmp.next = null;
+				tail = tmp;
+				size--;
+				hm.remove(tmp);
+			}
+			n.next = head;
+			id (head != null) head.prev = n;
+			head = n;
+			size++;
+			hm.put(data, n);
+		}
+	}
+}
+```
