@@ -1,19 +1,27 @@
 {
   "settings": {
-    "migrated": 3,
+    "migrated": 4,
     "iconPacksPath": ".obsidian/icons",
     "fontSize": 16,
     "emojiStyle": "none",
     "iconColor": null,
     "recentlyUsedIcons": [
+      "FasLink",
+      "RiStackFill",
       "FasMagnifyingGlass",
       "FasA",
-      "RiProjectorFill",
-      "FasPersonSkiing",
-      "RiQuestionAnswerFill"
+      "RiProjectorFill"
     ],
     "recentlyUsedIconsSize": 5,
-    "rules": [],
+    "rules": [
+      {
+        "icon": "FasFolder",
+        "rule": "DSA\\/[\\w\\d\\s]+\\.(?:\\w+\\.)*\\w+",
+        "for": "files",
+        "order": 0,
+        "useFilePath": true
+      }
+    ],
     "extraMargin": {
       "top": 0,
       "right": 4,
@@ -24,15 +32,10 @@
     "iconInTitleEnabled": false,
     "iconInFrontmatterEnabled": false,
     "iconsBackgroundCheckEnabled": false,
-    "iconsInNotesEnabled": true
-  },
-  "Kanban": "FasFolder",
-  "DSA": {
-    "iconName": "FasFolder",
-    "inheritanceIcon": "FasFolder"
+    "iconsInNotesEnabled": true,
+    "iconIdentifier": ":"
   },
   "Redis": "FasFolder",
-  "Kanban/My Work items Kanban.md": "RiCheckDoubleFill",
   "Redis/Course contents.md": "RiTable2",
   "Redis/Planner.canvas": "FasStairs",
   "Behaviour Round Questions": "FasFolder",
@@ -55,5 +58,8 @@
   "DSA/Notes/Strings.md": "RiThreadsLine",
   "DSA/Love Babbar/Arrays.md": "FasA",
   "DSA/Notes/Searching.md": "FasMagnifyingGlass",
-  "DSA/Notes/Prefix Sum, Carry forward, Sliding Window and Two pointers approach.md": "FasPeopleCarryBox"
+  "DSA/Notes/Prefix Sum, Carry forward, Sliding Window and Two pointers approach.md": "FasPeopleCarryBox",
+  "DSA": "FasFolder",
+  "DSA/Notes/Stacks & Queues.md": "RiStackFill",
+  "DSA/Notes/Linked List.md": "FasLink"
 }
