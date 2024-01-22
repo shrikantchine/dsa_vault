@@ -63,11 +63,53 @@ class Node {
 
 ## Traversals of tree
 
-![[Pasted image 20240122224855.png]]
+![[Pasted image 20240122225853.png]]
 
 Consider the above tree and perform the below traversal
-1. pre-order traversal
-2. post-order traversal
-3. in-order traversal
+1. pre-order traversal => Node, Left child,  Right
+2. post-order traversal => Left, Node, Right
+3. in-order traversal => Left, Right, Node
 4. Level order traversal
 5. Vertical traversal
+
+
+### Pre-order traversal
+
+Order = Node, Left child,  Right
+Solution for the above tree => `[10, 5, 3, 8, 15, 12, 18]`
+
+```java
+void preOrder(Node root) {
+	if (root == null) return;
+	System.out.println(root.val);
+	preOrder(root.left);
+	preOrder(root.right);
+}
+```
+### In-order traversal
+
+Order = Left, Node,  Right
+Solution for the above tree => `[3, 5, 8, 10, 12, 15, 18]`
+
+```java
+void preOrder(Node root) {
+	if (root == null) return;	
+	preOrder(root.left);
+	System.out.println(root.val);
+	preOrder(root.right);
+}
+```
+
+### Post-order traversal
+
+Order = Left,  Right, Node
+Solution for the above tree => `[3, 8, 5, 12, 18, 15, 10]`
+
+```java
+void preOrder(Node root) {
+	if (root == null) return;	
+	preOrder(root.left);
+	preOrder(root.right);
+	System.out.println(root.val);
+}
+```
