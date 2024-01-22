@@ -81,24 +81,69 @@ Solution for the above tree => `[10, 5, 3, 8, 15, 12, 18]`
 ```java
 void preOrder(Node root) {
 	if (root == null) return;
-	System.out.println(root.val);
+	System.out.println(root.data);
 	preOrder(root.left);
 	preOrder(root.right);
 }
 ```
+**Complexity**
+Time complexity of recursion = (Number of recursive calls) * (Time taken per call)
+So, time complexity: N calls of O(1) => O(N)
+Space complexity: O(N)
+
 ### In-order traversal
 
 Order = Left, Node,  Right
 Solution for the above tree => `[3, 5, 8, 10, 12, 15, 18]`
 
 ```java
-void preOrder(Node root) {
+void inOrder(Node root) {
 	if (root == null) return;	
-	preOrder(root.left);
-	System.out.println(root.val);
-	preOrder(root.right);
+	inOrder(root.left);
+	System.out.println(root.data);
+	inOrder(root.right);
+}
+
+void inOrderIterative1(Node root) {
+	Deque<Node> st = new ArrayDeque<>();
+	Node curr = root;
+
+	while (curr != null || !st.isEmpty()) {
+		if (curr != null) {
+			st.push(curr);
+			curr = curr.left;
+		} else {
+			curr = st.pop();
+			System.out.println(curr.data);
+			curr = curr.right;
+		}
+	}
+}
+
+void inOrderIterative2(Node root) {
+	Deque<Node> st = new ArrayDeque<>();
+	if (root != null) {
+		st.push(root);
+	}
+
+	while (!st.isEmpty()) {
+		Node n = st.peek();
+		while (n.left != null) {
+			st.push(n);
+			n = n.left;
+		}
+		n = st.pop();
+		System.out.println(n);
+		if (n.right != null) {
+			st.push(n.right);
+		}
+	}
+	
 }
 ```
+**Complexity**
+So, time complexity: O(N)
+Space complexity: O(N)
 
 ### Post-order traversal
 
@@ -106,10 +151,13 @@ Order = Left,  Right, Node
 Solution for the above tree => `[3, 8, 5, 12, 18, 15, 10]`
 
 ```java
-void preOrder(Node root) {
+void postOrder(Node root) {
 	if (root == null) return;	
-	preOrder(root.left);
-	preOrder(root.right);
-	System.out.println(root.val);
+	postOrder(root.left);
+	postOrder(root.right);
+	System.out.println(root.data);
 }
 ```
+**Complexity**
+So, time complexity: O(N)
+Space complexity: O(N)
