@@ -6,11 +6,11 @@
     "emojiStyle": "none",
     "iconColor": null,
     "recentlyUsedIcons": [
+      "FasTree",
       "FasLink",
       "RiStackFill",
       "FasMagnifyingGlass",
-      "FasA",
-      "RiProjectorFill"
+      "FasA"
     ],
     "recentlyUsedIconsSize": 5,
     "rules": [
@@ -61,5 +61,6 @@
   "DSA/Notes/Prefix Sum, Carry forward, Sliding Window and Two pointers approach.md": "FasPeopleCarryBox",
   "DSA": "FasFolder",
   "DSA/Notes/Stacks & Queues.md": "RiStackFill",
-  "DSA/Notes/Linked List.md": "FasLink"
+  "DSA/Notes/Linked List.md": "FasLink",
+  "DSA/Notes/Trees.md": "FasTree"
 }

@@ -400,3 +400,207 @@ Space complexity: O(n)
 
 ![[Pasted image 20240120211056.png]]
 
+### Operations in a queue
+
+1. `enqueu(x)` => Insert a value to queue
+2. `dequeue()` => Remove data from queue
+3. `isEmpty()` => Check if queue is empty
+4. `front()` => Returns data at the front of the queue
+5. `rear()` => Returns data from rear end of the queue
+
+>All queue operations have a time complexity of O(1)
+
+### Implement queue using array
+
+```java
+class Queue {
+	List<Integer> q = new ArrayList<>();
+	int front = 0, rear = -1;
+
+	void enqueu(int data) {
+		q.add(data);
+		r++;
+	}
+
+	boolean isEmpty() {
+		return f > r;
+	}
+
+	int dequeue() {
+		if (this.isEmpty()) return Integer.MIN_VALUE;
+		return q.get(front++);
+	}
+
+	int front() {
+		if (this.isEmpty()) return Integer.MIN_VALUE;
+		return A[f];
+	}
+
+	int rear() {
+		if (this.isEmpty()) return Integer.MIN_VALUE;
+		return A[r];
+	}
+}
+```
+
+**Issues with this approach**
+1. After deletion, the data is still present in the array/arrayList. Thus this method of implementation is wasteful in terms of space.
+
+### Implementation using Linked List
+
+```java
+class Queue {
+	Node head, tail;
+
+	void enqueu(int data) {
+		Node n = new Node(data);
+		if (this.isEmpty()) {
+			head = n;
+			tail = n;
+		} else {
+			tail.next = n;
+		}
+	}
+
+	boolean isEmpty() {
+		return head == null;
+	}
+
+	int dequeue() {
+		if (this.isEmpty()) return Integer.MIN_VALUE;
+		int ans = head.data;
+		head = head.next;
+		return ans;
+	}
+
+	int front() {
+		if (this.isEmpty()) return Integer.MIN_VALUE;
+		return head.data;
+	}
+
+	int rear() {
+		if (this.isEmpty()) return Integer.MIN_VALUE;
+		return tail.data;
+	}
+}
+
+class Node {
+	int data;
+	int next;
+
+	Node(int data) {
+		this.data = data;
+	}
+}
+```
+
+### Implement Queue using two stacks
+
+```java
+class Queue {
+	Deque<Integer> st1 = new ArrayDeque<>();
+	Deque<Integer> st2 = new ArrayDeque<>();
+
+	void enqueue(int data) {
+		st1.push(data);
+	}
+
+	private move() {
+		while (!st1.isEmpty()) {
+			st2.push(st1.pop());
+		}
+	}
+
+	boolean isEmpty() {
+		return st1.isEmpty() && st2.isEmpty();
+	}
+
+	int dequeue() {
+		if (isEmpty()) return Integer.MIN_VALUE;
+		if (st2.isEmpty()) {
+			move();
+		}
+		return st2.pop();
+	}
+}
+```
+
+**Complexity**
+Enqueue: O(1)
+isEmpty(): O(1)
+Dequeue():
+	- Move happens for first dequeue and then all elements present in st2 can be removed in constant time.
+	- Say, `n` elements were moved in first dequeue, lets count the number of operations
+		- n constant operations to move, 1 constant operations for pop
+		- for rest `n-1` dequeue, there are `n-1` constant operations
+		- So, total `2n` operations for n dequeue.
+		- Thus, the dequeue is a constant operation on average
+
+### Nth number formed by 1 & 2
+
+**Problem statement**
+Given an integer N, find the Nth number that can formed by digits `1 & 2`
+
+**Example**
+[1, 2, 11, 12, 21, 22, 111, 112, 121, 222] => These are first 10 numbers
+
+**Observation**
+
+```
+              1                 2                   
+          11        12       21       22
+        111  112  121  122  211 212  221  222
+```
+- This is like level order traversal of a tree
+
+**Solution**
+- Initialise a queue
+- Add 1 & 2 in queue
+- Take the first element `x` out of queue and insert `x*10 + 1` & `x*10 + 2`
+- Stop when Nth element is found.
+
+```java
+int nthElement(int N) {
+	if (N <= 2) return N;
+	Queue<Integer> q = new LinkedList<>();
+	q.add(1);
+	q.add(2);
+	int i = 3
+	while (i <= N) {
+		
+		i+= 2;
+	}
+}
+```
+
+
+### Doubly ended queue
+- Support enqueue from the front.
+- Support dequeue from the rear
+- Therefor it is "Queue + Stack"
+- Doubly ended queue can be implemented using doubly linked list.
+- Time complexity for all operations is O(1)
+
+### Max Element in all sub-arrays of size K
+
+**Problem Statement**
+Given an integer array and an integer K, find max element for all sub arrays of size K.
+
+**Observation**
+- Since sub array size is fixed, sliding window can be used.
+- Build first sliding window using doubly ended queue.
+	- For each element index, delete all elements from the end if they are less than current element
+	- Once done, whatever is at the front is the max element for first window.
+- While moving the window
+	- If the element at the front of the queue is outside the window, delete from front.
+	- Delete all smaller elements from end
+	- Add current element
+	- Once done, whatever is at the front is the max element for the window.
+
+```java
+ArrayList<Integer> maxElem(ArrayList<Integer> A, int k) {
+	Deque<Integer> 
+	for (int i=0; i<k; i++) {
+	}
+}
+```

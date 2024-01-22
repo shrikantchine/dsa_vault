@@ -4,16 +4,16 @@
     "type": "split",
     "children": [
       {
-        "id": "e8857ecc565ffa33",
+        "id": "07fdd1332a53bb47",
         "type": "tabs",
         "children": [
           {
-            "id": "ff39aee07b218cb5",
+            "id": "b0d94e8585f934be",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "DSA/Notes/Stacks & Queues.md",
+                "file": "DSA/Notes/Trees.md",
                 "mode": "source",
                 "source": false
               }
@@ -86,7 +86,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "DSA/Notes/Stacks & Queues.md",
+                "file": "DSA/Notes/Trees.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -103,7 +103,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "DSA/Notes/Stacks & Queues.md",
+                "file": "DSA/Notes/Trees.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -126,7 +126,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "DSA/Notes/Stacks & Queues.md"
+                "file": "DSA/Notes/Trees.md"
               }
             }
           }
@@ -148,8 +148,12 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "ff39aee07b218cb5",
+  "active": "b0d94e8585f934be",
   "lastOpenFiles": [
+    "DSA/Notes/assets/Pasted image 20240122224855.png",
+    "DSA/Notes/assets/Pasted image 20240122211546.png",
+    "DSA/Notes/Trees.md",
+    "DSA/Notes/Stacks & Queues.md",
     "DSA/Notes/assets/Pasted image 20240120211056.png",
     "DSA/Notes/assets/Pasted image 20240119225259.png",
     "DSA/Notes/Recursion.md",
@@ -166,7 +170,6 @@
     "DSA/Notes/1-D array.md",
     "DSA/Notes/assets/Pasted image 20240110213004.png",
     "DSA/Notes/assets",
-    "DSA/Notes/Stacks & Queues.md",
     "DSA/Notes/assets/Pasted image 20240115225449.png",
     "DSA/Notes/assets/Pasted image 20240115212048.png",
     "DSA/Notes/assets/Pasted image 20240112224038.png",
@@ -188,7 +191,6 @@
     "Redis/Planner.canvas",
     "Redis/Course contents.md",
     "Behaviour Round Questions",
-    "DSA/Notes/2-D Array.md",
     "Kanban",
     "DSA/images",
     "DSA 21e0c258ddf247fb8d1b619948ab7b29",
