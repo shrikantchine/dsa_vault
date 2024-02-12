@@ -4,16 +4,16 @@
     "type": "split",
     "children": [
       {
-        "id": "07fdd1332a53bb47",
+        "id": "c2e6a989be52abe9",
         "type": "tabs",
         "children": [
           {
-            "id": "b0d94e8585f934be",
+            "id": "f08b9fad2ab59d0e",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "DSA/Notes/Trees.md",
+                "file": "DSA/Notes/Heap.md",
                 "mode": "source",
                 "source": false
               }
@@ -86,7 +86,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "DSA/Notes/Trees.md",
+                "file": "DSA/Notes/Heap.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -103,7 +103,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "DSA/Notes/Trees.md",
+                "file": "DSA/Notes/Heap.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -126,7 +126,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "DSA/Notes/Trees.md"
+                "file": "DSA/Notes/Heap.md"
               }
             }
           }
@@ -148,12 +148,17 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "bf0693f63d0ea446",
+  "active": "f08b9fad2ab59d0e",
   "lastOpenFiles": [
+    "DSA/Notes/Heap.md",
+    "DSA/Notes/Trees.md",
+    "DSA/Notes/assets/Pasted image 20240211223720.png",
+    "DSA/Notes/assets/Pasted image 20240211223818.png",
+    "DSA/Notes/assets/Pasted image 20240211223753.png",
+    "DSA/Notes/assets/Pasted image 20240211220717.png",
     "DSA/Notes/assets/Pasted image 20240122225853.png",
     "DSA/Notes/assets/Pasted image 20240122224855.png",
     "DSA/Notes/assets/Pasted image 20240122211546.png",
-    "DSA/Notes/Trees.md",
     "DSA/Notes/Stacks & Queues.md",
     "DSA/Notes/assets/Pasted image 20240120211056.png",
     "DSA/Notes/assets/Pasted image 20240119225259.png",
@@ -169,12 +174,7 @@
     "Kanban/Untitled Kanban.md",
     "Kanban/Untitled.md",
     "DSA/Notes/1-D array.md",
-    "DSA/Notes/assets/Pasted image 20240110213004.png",
     "DSA/Notes/assets",
-    "DSA/Notes/assets/Pasted image 20240115225449.png",
-    "DSA/Notes/assets/Pasted image 20240115212048.png",
-    "DSA/Notes/assets/Pasted image 20240112224038.png",
-    "DSA/Notes/assets/Pasted image 20240112223932.png",
     "DSA/Notes/Prefix Sum, Carry forward, Sliding Window and Two pointers approach.md",
     "Behaviour Round Questions/TODO.md",
     "DSA/Notes/Bit Manipulation.md",

@@ -6,11 +6,11 @@
     "emojiStyle": "none",
     "iconColor": null,
     "recentlyUsedIcons": [
+      "FasH",
       "FasTree",
       "FasLink",
       "RiStackFill",
-      "FasMagnifyingGlass",
-      "FasA"
+      "FasMagnifyingGlass"
     ],
     "recentlyUsedIconsSize": 5,
     "rules": [
@@ -62,5 +62,6 @@
   "DSA": "FasFolder",
   "DSA/Notes/Stacks & Queues.md": "RiStackFill",
   "DSA/Notes/Linked List.md": "FasLink",
-  "DSA/Notes/Trees.md": "FasTree"
+  "DSA/Notes/Trees.md": "FasTree",
+  "DSA/Notes/Heap.md": "FasH"
 }
