@@ -73,15 +73,67 @@ Since the step 2 is same for all ways, we need to minimise Step 1. This means co
 	- Repeat till the root node or the heap property is already maintained at parent node.
 
 ```java
-void upHeapify(int[] heap, int index) {
+void insert(List<Integer> heap, int value) {
+	heap.add(value); // Consider dynamic array
+	upHeapify(heap, heap.size()-1);
+}
+
+void upHeapify(List<Integer> heap, int index) {
 	int parent = (index-1)/2;
 
-	while (index != 0 && heap[parent] > heap[index]) {
-		int tmp = heap[parent];
-		heap[parent] = heap[index];
-		heap[index] = tmp;
+	while (index != 0 && heap.get(parent) > heap.get(index)) {
+		int tmp = heap.get(parent);
+		heap.set(parent, heap.get(index));
+		heap.set(index, tmp);
 		index = parent;
 		parent = (index-1)/2;
 	}
 }
 ```
+
+## How to remove an element from heap ?
+
+- Swap the element that is required to be removed with the last element
+- Remove the last element
+- Perform *downHeapify*
+	- Get the smaller of left and right child
+	- Swap with current element with it.
+	- current element = smaller element
+	- repeat
+
+```java
+void remove(List<Integer> heap, int idx) {
+	Collections.swap(heap, idx, heap.size()-1);
+	heap.remove(heap.size()-1);
+	downHeapify(heap, 0);
+}
+
+void downHeapify(List<Integer> heap, int i) {
+	int N = heap.size();
+	int leftIndex = 2*i+1;
+	int rightIndex = 2*i+2;
+
+	while (leftChild < N) {
+		if (rightChild == N) {
+			if (heap.get(i) > heap.get(leftChild)) {
+				Collections.swap(heap, i, leftChlid);
+			}
+			break;
+		}
+		if (heap.get(leftChild) < heap.get(i) && heap.get(leftChild) <= heap.get(rightChild)) {
+			Collections.swap(heap, i, leftChild);
+			i = leftChild;
+			leftIndex = 2*i+1;
+			rightIndex = 2*i+2;
+		} else if (heap.get(rightChild) < heap.get(i) && heap.get(rightChild) < heap.get(leftChild)) {
+			Collections.swap(heap, i, rightChild);
+			i = rightChild;
+			leftIndex = 2*i+1;
+			rightIndex = 2*i+2;
+		} else {
+			break;
+		}
+	}
+}
+```
+
