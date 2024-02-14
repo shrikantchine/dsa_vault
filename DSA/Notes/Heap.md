@@ -102,8 +102,8 @@ void upHeapify(List<Integer> heap, int index) {
 	- repeat
 
 ```java
-void remove(List<Integer> heap, int idx) {
-	Collections.swap(heap, idx, heap.size()-1);
+void removeMin(List<Integer> heap) {
+	Collections.swap(heap, 0, heap.size()-1);
 	heap.remove(heap.size()-1);
 	downHeapify(heap, 0);
 }
@@ -136,4 +136,26 @@ void downHeapify(List<Integer> heap, int i) {
 	}
 }
 ```
+
+**Complexity**
+Time complexity: O(log n)
+Space complexity: O(1)
+
+## Build a heap
+
+Given an array A, build a heap
+
+**Approach 1**
+Sort the array. Sorted array is always a min Heap.
+
+Time complexity: O(n log n)
+Space complexity: O(log n)
+
+**Approach 2**
+Create an empty heap and use the insert operation to build the heap
+
+Time complexity: O(n log n)
+Space complexity: O(n)
+
+## Merge N sorted arrays
 
