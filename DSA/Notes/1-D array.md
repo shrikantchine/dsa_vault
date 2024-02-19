@@ -62,7 +62,10 @@ int findMaxSumOfArr(int[] A, int N) {
 
 ### Improvements = Kadane’s algorithm
 
-Lets consider cases: - All elements are positive => Ans is sum of all elements - All elements are negative => Ans is largest element in the array OR smalles absolute value in the array - If positives are present in between negatives => Sum all positives
+Lets consider cases: 
+- All elements are positive => Ans is sum of all elements 
+- All elements are negative => Ans is largest element in the array OR smallest absolute value in the array 
+- If positives are present in between negatives => Sum all positives
 
 ```
 Example:
@@ -372,10 +375,10 @@ int absoluteDifference(int[] A) {
 	int N = A.length, minB = Integer.MAX_VALUE, minC = Integer.MAX_VALUE, maxB = Interger.MIN_VALUE, maxC = Integer.MAX_VALUE;
 	
 	for (int i=0; i<A.length; i++) {
-		********minB ************************************= Math.min(minB,************************************ A[i] - i);
-		********minC ************************************= Math.min(minC,************************************ A[i] + i);
-		********maxB ************************************= Math.max(maxB,************************************ A[i] - i);
-		********maxC ************************************= Math.max(maxC,************************************ A[i] + i);
+		minB= Math.min(minB, A[i] - i);
+		minC= Math.min(minC, A[i] + i);
+		maxB= Math.max(maxB, A[i] - i);
+		maxC= Math.max(maxC, A[i] + i);
 	}
 	int ans1 = maxB - minB;
 	int ans2 = maxC - minC; 

@@ -7,10 +7,13 @@ debugInConsole: false # Print debug info in Obsidian console
 
 ## Getting to know you questions
 
+### Introduce yourself
+
+
 ### Why do you want to leave the current company ?
 
 - Currently, I work for FRSPL, India Pvt. Ltd. but I work as contractor. I am looking for a permanent position.
-- I am on special contract where I can work from home. I choose this when my child was born. 
+- I am on special contract where I can work from home. I chose this when my child was born. 
 - Since the current company, the requirement is to be available and only those who can get any promotion. This means my current contractual role is making my career stagnant. 
 - I am looking to get promoted and apply the skills that I learn/learning towards new challenges
 - Since I moved to India and still working as South African contractor (in a way), I find many cultural differences like many company events that I am never part of.

@@ -159,3 +159,26 @@ Space complexity: O(n)
 
 ## Merge N sorted arrays
 
+
+
+## Find number of leaf nodes
+
+**Problem statement**
+Given a complete binary tree  with N nodes, find the number of leaf nodes
+
+**Solution**
+Take examples:
+
+| N | Number of leaf nodes |
+|---|----------------------|
+| 1 | 1                    |
+| 2 | 1                    |
+| 3 | 2                    |
+| 4 | 2                    |
+| 5 | 3                    |
+| 6 | 3                    |
+| 7 | 4                    |
+| 8 | 4                    |
+
+So, the answer is directly $(N+1)/2$ or $\lceil (N/2) \rceil$
+
