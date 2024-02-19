@@ -78,3 +78,119 @@ class Item {
 
 Time Complexity: O(n log n) => Because of sorting
 Space complexity: O(n)
+
+### Minimum Candies required
+
+**Problem Statement**
+There are N students in a class. After their exam results, teacher wants to distribute candies to them as per below constraints
+
+1. Every student must have at least 1 candy.
+2. Student with marks more than his/her neighbour should be given more candies compared to neighbours.
+
+Find the minimum number of candies required.
+
+Example:
+
+```
+Example 1:
+
+	A        = [1, 5, 2, 1, 10]
+	Candies  = [1, 3, 2, 1, 2]
+	Total candies = 9
+
+Example 2:
+	A        = [4, 4, 4, 4, 4]
+	Candies  = [1, 1, 1, 1, 1]
+	Total candies = 5
+```
+
+**Solution**
+
+- Since the problem here is that we need to know the number of candies given to both left and right neighbour before deciding the number of candies for current student, it is not possible to do this with 1 iteration (from left to right or right to left).
+- So, we will use 2 array
+
+```text
+A                  = [1, 6, 3, 1, 10, 12, 20, 5, 2]
+Candies from Left  = [1, 2, 1, 1, 2,  3,  4,  1, 1] => This is being greedy
+Candies from right = [1, 3, 2, 1, 1,  1,  3,  2, 1] => This is being greedy
+Ans                = [1, 3, 2, 1, 2,  3,  4,  2, 1] => Max of left and right
+```
+
+```java
+int maxCandies(int[] A) {
+	int n = A.length, ans = 0;
+	int[] cl = new int[n];
+	int[] cr = new int[n]
+	cl[0] = 1;
+	for (int i=1; i<n; i++) {
+		if (A[i] > A[i-1]) {
+			cl[i] = cl[i-1] + 1;
+		} else {
+			cl[i] = 1;
+		}
+	}
+
+	cr[n-1] = 1;
+	for (int i=n-2; i>=0; i--) {
+		if (A[i] > A[i+1]) {
+			cr[i] = cr[i+1]+1;
+		} else {
+			cr[i] = 1;
+		}
+	}
+
+	for (int i=0; i<n; i++) {
+		ans += Math.max(cl[i], cr[i]);
+	}
+
+	return ans;
+}
+```
+
+**Complexity Analysis**
+
+Time Complexity: O(n)
+Space complexity: O(n)
+
+### Maximum Jobs
+
+**Problem statement**
+
+Given N jobs defined by `[start_time, end_time]` . Find max number of jobs that can be completed if only 1 job can be done at a time.
+
+**Solution**
+
+- To maximise the number of jobs taken, sort based on `end time`
+- Iterate and check if job at current index `i` can be completed. A job can be completed if its start time is greater than or equal to end time of previous job.
+
+```java
+class Job {
+	int start;
+	int end;
+
+	Job(int start, int end) {
+		this.start = start;
+		this.end = end;
+	}
+}
+
+int countJobs(Job[] jobs) {
+	Arrays.sort(jobs, (j1, j2) -> Integer.compare(j1.end, j2.end));
+	int count = 1;
+	int lastEndTime = jobs[0].end;
+
+	for (int i=1; i<jobs.length; i++) {
+		if (jobs[i].start >= lastEndTime) {
+			count++;
+			lastEndTime = jobs[i].end;
+		}
+	}
+
+	return count;
+}
+```
+
+**Complexity Analysis**
+
+Time Complexity: O(n log n) =>  because of sorting
+Space complexity: O(n)
