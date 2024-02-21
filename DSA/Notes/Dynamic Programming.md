@@ -172,3 +172,67 @@ int countWays(int n) {
 	return n0;
 }
 ```
+
+### Perfect Square Sum
+
+**Problem statement**
+
+Given an integer N, Figure out the minimum number of perfect squares we can add to get the sum = N.
+
+**Examples**
+
+```text
+N = 6
+Way 1 => 1 + 1 + 1 + 1 + 1 + 1
+Way 2 => 4 + 1 + 1
+
+Therefore: Way 2 gives minimum number of perfect squares
+Ans = 3
+```
+
+**Why greedy cannot be implemented**
+
+Greedy solution
+- Find the nearest perfect square to given number
+- Subtract it from number and do the same steps again.
+
+It does not work for N = 12
+- Greedy gives ans = 4
+- Correct ans is 3
+
+**What happens if greedy fails**
+
+- The only alternative is to explore all choices Or Brute force
+- So, for this example
+	$\forall i$ 
+
+**Solution**
+
+1. Elements of choices => $\forall \space i \space where \space i*i <= N$
+2. Represent State => DP[i] = Min Squares required for for sum = N
+3. Recurrence relation => 
+$$
+			DP[n] = 
+		\begin{cases}
+		   1 &\text{if } n=0 \\
+		   2 &\text{if } n=1 \\
+		   \forall j &  j*j < n&min(DP[i-j^2]) &\text{if } n>1
+		\end{cases}
+$$
+4. Which state is the answer ?
+	- We can use an array of size `N+1`
+	- Because in the branch where 1 is the perfect square always, we will have all states from N to 1
+
+```java
+int minSquareSum(int N) {
+	if (N < 0) return 0;
+	if (N == 0 || N == 1) return N;
+	 
+	int i=1;
+	int square = i*i;
+
+	
+	while (square < N) {
+	}
+}
+```
