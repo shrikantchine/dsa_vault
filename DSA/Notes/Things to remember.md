@@ -79,6 +79,11 @@ Example:
 ## GCD and LCM
 
 s
+
+## How to solve recursion/DP problems
+
+[[Dynamic Programming#Staircase]]
+
 ## 🌟 Important Links
 
 - 💡[yangshun tech-interview-handbook](https://github.com/yangshun/tech-interview-handbook)

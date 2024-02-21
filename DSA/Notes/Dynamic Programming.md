@@ -12,7 +12,7 @@ f(n) =
 \begin{cases}
    0 &\text{if } n=0 \\
    1 &\text{if } n=1 \\
-   f(n-1) + f(n-2) &\text{if } n=0
+   f(n-1) + f(n-2) &\text{if } n>1
 \end{cases}
 $$
 
@@ -121,3 +121,54 @@ Space complexity:  O(1)
 ### DP State
 
 `DP[i] `: What are we calculating at `ith` step
+
+### Staircase 
+
+**Problem Statement**
+
+Given staircases numbered from 0 to N. In 1 step, you can jump 1 stair or 2 stairs.
+Find the number of ways to reach Nth staircase.
+
+**Example**
+N = 1 => 1
+N = 2 => 2
+N = 3 => 3
+
+**Solution**
+> Notion of choice = Recursion in most cases
+
+**Steps to solve Recursion/DP problems**
+1. Identify the element of choice. In this example: 1 step or 2 step in each iteration
+2. Represent the state. In this example: DP[i] = No of ways to reach ith step.
+3. Use step 1 and step 2 to write recurrence relationship.
+	$$
+		DP[n] = 
+		\begin{cases}
+		   1 &\text{if } n=0 \\
+		   2 &\text{if } n=1 \\
+		   DP[n-1] + DP[n-2] &\text{if } n>1
+		\end{cases}
+	$$
+4. Identify the state which is the final answer: In this case: DP[N]
+5. Identify if DP can be applied
+	1. Overlapping sub problems => In our case, they are present. 
+	2. Optimal sub structure => In our case, it is present
+6. Top Down DP vs Bottom up DP
+	1. Top Down: Use memoization
+	2. Bottom up: Use two variables to hold previous two steps.
+
+
+```java
+int countWays(int n) {
+	int n0 = 1;
+	int n1 = 2;
+
+	for (int i=2; i<=n; i++) {
+		int tmp = n0 + n1;
+		n1 = n0;
+		n0 = tmp;
+	}
+
+	return n0;
+}
+```

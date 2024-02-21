@@ -69,8 +69,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 241.5,
-    "collapsed": true
+    "width": 241.5
   },
   "right": {
     "id": "05def596bee7bffb",
@@ -159,8 +158,9 @@
   },
   "active": "738ca081edf8a25c",
   "lastOpenFiles": [
-    "DSA/Notes/Greedy Algorithms.md",
+    "DSA/Notes/Things to remember.md",
     "DSA/Notes/Dynamic Programming.md",
+    "DSA/Notes/Greedy Algorithms.md",
     "DSA/Love Babbar/Arrays.md",
     "DSA/Notes/Bit Manipulation.md",
     "System Design/Distributed Caching.md",
@@ -186,7 +186,6 @@
     "DSA/Notes/assets/Pasted image 20240120211056.png",
     "DSA/Notes/assets/Pasted image 20240119225259.png",
     "DSA/Notes/Recursion.md",
-    "DSA/Notes/Things to remember.md",
     "DSA/Notes/Strings.md",
     "DSA/Notes/Sorting.md",
     "DSA/Notes/Searching.md",
