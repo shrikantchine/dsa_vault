@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "DSA/Notes/Greedy Algorithms.md",
+                "file": "DSA/Notes/Dynamic Programming.md",
                 "mode": "source",
                 "source": false
               }
@@ -86,7 +86,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "DSA/Notes/Greedy Algorithms.md",
+                "file": "DSA/Notes/Dynamic Programming.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -103,7 +103,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "DSA/Notes/Greedy Algorithms.md",
+                "file": "DSA/Notes/Dynamic Programming.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -126,7 +126,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "DSA/Notes/Greedy Algorithms.md"
+                "file": "DSA/Notes/Dynamic Programming.md"
               }
             }
           },
@@ -159,8 +159,9 @@
   },
   "active": "738ca081edf8a25c",
   "lastOpenFiles": [
-    "DSA/Love Babbar/Arrays.md",
     "DSA/Notes/Greedy Algorithms.md",
+    "DSA/Notes/Dynamic Programming.md",
+    "DSA/Love Babbar/Arrays.md",
     "DSA/Notes/Bit Manipulation.md",
     "System Design/Distributed Caching.md",
     "DSA/Notes/Heap.md",
@@ -198,7 +199,6 @@
     "DSA/Notes",
     "DSA/Love Babbar",
     "Behaviour Round Questions/4 - Situational Questions.md",
-    "Travel plans/Untitled.md",
     "Travel plans",
     "Redis/Planner.canvas",
     "Behaviour Round Questions",
