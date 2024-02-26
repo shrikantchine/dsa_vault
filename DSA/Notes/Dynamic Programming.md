@@ -225,14 +225,15 @@ $$
 
 ```java
 int minSquareSum(int N) {
-	if (N < 0) return 0;
-	if (N == 0 || N == 1) return N;
-	 
-	int i=1;
-	int square = i*i;
-
-	
-	while (square < N) {
+	int[] dp = new int[N+1];
+	dp[0] = 0;
+	dp[1] = 1;
+	for (int i=2; i<=N; i++) {
+		dp[i] = i;
+		for (int j=2; j*j<=i; j++) {
+		dp[i] = Math.min(dp[i], 1 + dp[i-(j*j)]);
+		}
 	}
+	return dp[N];
 }
 ```

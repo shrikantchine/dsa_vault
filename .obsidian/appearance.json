@@ -1,5 +1,7 @@
 {
   "accentColor": "#7033ff",
   "theme": "system",
-  "cssTheme": "Things"
+  "cssTheme": "Things",
+  "textFontFamily": "JetBrainsMono Nerd Font",
+  "monospaceFontFamily": "JetBrainsMono Nerd Font Mono"
 }

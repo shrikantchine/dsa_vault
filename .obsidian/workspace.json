@@ -11,12 +11,8 @@
             "id": "738ca081edf8a25c",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "DSA/Notes/Dynamic Programming.md",
-                "mode": "source",
-                "source": false
-              }
+              "type": "empty",
+              "state": {}
             }
           }
         ]
@@ -48,7 +44,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "missing",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -69,8 +65,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 241.5,
-    "collapsed": true
+    "width": 241.5
   },
   "right": {
     "id": "05def596bee7bffb",
@@ -86,7 +81,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "DSA/Notes/Dynamic Programming.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -103,7 +97,6 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "DSA/Notes/Dynamic Programming.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,9 +118,7 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {
-                "file": "DSA/Notes/Dynamic Programming.md"
-              }
+              "state": {}
             }
           },
           {
@@ -159,6 +150,10 @@
   },
   "active": "738ca081edf8a25c",
   "lastOpenFiles": [
+    "Redis/Planner.canvas",
+    "Redis/Module 0 - Course objective.md",
+    "Redis/Course contents.md",
+    "DSA/Notes/Miscellaneous.md",
     "DSA/Notes/Things to remember.md",
     "DSA/Notes/Dynamic Programming.md",
     "DSA/Notes/Greedy Algorithms.md",
@@ -192,15 +187,10 @@
     "DSA/Notes/Searching.md",
     "DSA/Notes/assets/tower_of_hanoi.png",
     "Kanban/My Work items Kanban.md",
-    "Kanban/Untitled Kanban.md",
-    "Kanban/Untitled.md",
     "DSA/Notes/assets",
-    "Behaviour Round Questions/TODO.md",
     "DSA/Notes",
     "DSA/Love Babbar",
-    "Behaviour Round Questions/4 - Situational Questions.md",
     "Travel plans",
-    "Redis/Planner.canvas",
     "Behaviour Round Questions",
     "Kanban",
     "DSA/images",
