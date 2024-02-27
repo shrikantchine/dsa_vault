@@ -4,19 +4,15 @@
     "type": "split",
     "children": [
       {
-        "id": "25f9d80894f5fbab",
+        "id": "3e40b8fbf4e0acee",
         "type": "tabs",
         "children": [
           {
-            "id": "738ca081edf8a25c",
+            "id": "61f9f4d380a3827b",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "DSA/Notes/Dynamic Programming.md",
-                "mode": "source",
-                "source": false
-              }
+              "type": "empty",
+              "state": {}
             }
           }
         ]
@@ -69,8 +65,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 241.5,
-    "collapsed": true
+    "width": 241.5
   },
   "right": {
     "id": "05def596bee7bffb",
@@ -86,7 +81,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "DSA/Notes/Dynamic Programming.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -103,7 +97,6 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "DSA/Notes/Dynamic Programming.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,9 +118,7 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {
-                "file": "DSA/Notes/Dynamic Programming.md"
-              }
+              "state": {}
             }
           },
           {
@@ -157,14 +148,14 @@
       "mermaid-tools:Open Mermaid Toolbar": false
     }
   },
-  "active": "738ca081edf8a25c",
+  "active": "61f9f4d380a3827b",
   "lastOpenFiles": [
+    "DSA/Notes/Dynamic Programming.md",
     "Redis/Planner.canvas",
     "Redis/Module 0 - Course objective.md",
     "Redis/Course contents.md",
     "DSA/Notes/Miscellaneous.md",
     "DSA/Notes/Things to remember.md",
-    "DSA/Notes/Dynamic Programming.md",
     "DSA/Notes/Greedy Algorithms.md",
     "DSA/Love Babbar/Arrays.md",
     "DSA/Notes/Bit Manipulation.md",
