@@ -536,4 +536,161 @@ int findWays(int[][] A) {
 }
 ```
 
-### Dungeon Princess
+## Knapsack problems
+
+Knapsack is a category for problem where we are given 2 types of arrays V & W where 
+
+V[i] => Representing the profit/loss value of ith item
+W[i] => Representing the weight value of ith item
+
+A bag with capacity `C` is given. Select objects such that W[i] <= C but sum of profit/loss is maximised or minimised
+
+### Fractional knapsack
+
+**Problem Statement**
+
+Given N cakes. Each cake has a happiness value given by array H and weight value represented by array W.
+You visit the bakery with bag of capacity C. Find the max value of happiness that you can carry in the bag.
+
+Note: Cake can also be divided. 
+
+**Solution**
+- We can approach this greedily by selecting the items in the decreasing order of happiness per unit weight until the bag is full.
+
+So, to solve this
+- Sort the objects w.r.t. H[i]/W[i]
+- Select the cakes in decreasing order & remaining capacity
+
+**Complexity Analysis**
+Time complexity: O(n log n) ==> Sorting
+Space complexity: O(n)
+
+### 0-1 Knapsack
+
+Given N toys. Each toy has a happiness value given by array H and weight value represented by array W.
+You visit the bakery with bag of capacity C. Find the max value of happiness that you can carry in the bag.
+
+Note: Toy can't be divided. 
+
+**Observations**
+- Greedy approach is not possible here.
+- So, when greedy fails, the only option left is to perform brute force using recursion and find a way to optimize using DP (if possible)
+
+
+DP Solution:
+	- Element of Choice: Purchase or not
+	- State: happiness(i, c) represents max happiness that we can obtain if we select elements from [0, i] with capacity C
+	- Recurrence Relationship
+	$$
+		happiness(i, j) = 
+		max
+		\begin{cases}
+		   happiness(i-1, j-w[i]) + H[i] &\text{if selected} \\
+		   happiness(i-1, j) &\text{if not selected} \\
+		\end{cases}
+	$$
+
+	- Which state is the answer ?
+	happiness(N-1, C)
+
+```java
+int maxHappiness(int[] H, int[] W, int C) {
+	return helper(H, W, C, H.length-1);
+}
+
+int helper(int[] H, int[] W, int C int idx) {
+	if (idx < 0) return 0;
+	if (C == 0) return 0;
+	int answer = helper(H, W, idx-1);
+	if (W[idx] <= C) {
+		answer = Math.max(answer, helper(H, W, C-W[idx], idx-1));
+	}
+	return answer;
+}
+```
+
+**Complexity**
+Time complexity: O(2^N)
+
+- Do we have overlapping sub-problems ?
+	- YES => Can be checked by building the recursion tree for some example.
+
+**DP solution**
+
+- We will use 2-D DP matrix where rows represent index and columns represent capacity
+- Base cases
+	- Index = -1
+	- Capacity = 0
+- Since base case cannot be stored in DP array DP array size should be N+1, C+1
+- This means that index `i` in DP represents `i-1`th index in Happiness array
+
+```java
+int maxHappiness(int[] H, int[] W, int C) {
+	int N = H.length;
+	int[][] dp = new int[N+1][C+1];
+
+	for (int i=1; i<=N; i++) {
+		if (j=1; j<=C; j++) {
+			if (W[i-1] <= j) {
+				dp[i][j] = Math.max(dp[i-1][j] + H[i-1], dp[i-1][j-W[i-1]);
+			} else {
+				dp[i][j] = dp[i-1][j];
+			}
+		}
+	}
+	return dp[N][C];
+}
+```
+
+**Complexity**
+Time complexity: `O(N*C)`
+Space complexity: `O(N*C)`
+
+
+### 0-N or Unbounded Knapsack
+
+- Unlimited supply of each item is present.
+- In 0-1 knapsack, after processing the element (select or reject), the element is considered processed and cannot be selected again.
+- In 0-N knapsack, if we reject the element, it is considered processed but if we select an element, it is not considered processed because we can process it again.
+- So the recurrence relationship is
+
+$$
+		happiness(i, j) = 
+		max
+		\begin{cases}
+		   happiness(i, j-w[i]) + H[i] &\text{if selected} \\
+		   happiness(i-1, j) &\text{if not selected} \\
+		\end{cases}
+	$$
+- Same code as 0-1 knapsack can be used with small change to recurrence relation is described
+
+How to reduce it to 1-D DP problem ?
+
+- dp[i] => Max happiness in a bag with capacity `i`
+- Recursive relation
+	$$
+	dp[i] = max(\forall object \text{ (H[obj] + dp[i-w[obj]]) } if w[obj] <= i)
+	$$
+
+```java
+int maxHappiness(int[] H, int[] W, int C) {
+	int N = H.length;
+	int[] dp = new int[C+1];
+
+	for (int i=1; i<=C; j++) {
+		int maxHappinesss = 0;
+		for (int j=0; i<N; j++) {
+			if (W[j] <= i) {
+				int happiness = H[j] + dp[i-W[j]];
+				maxhappiness = Math.max(happiness, maxHappiness);
+			}
+		}
+		dp[i] = maxHappiness;
+	}
+	return dp[C];
+}
+```
+
+**Complexity**
+Time complexity: `O(N*C)`
+Space complexity: `O(C)`
