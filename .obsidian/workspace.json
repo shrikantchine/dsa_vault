@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "3e40b8fbf4e0acee",
+        "id": "48bf907943469fef",
         "type": "tabs",
         "children": [
           {
-            "id": "61f9f4d380a3827b",
+            "id": "24667f85de92ee11",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -69,8 +69,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 241.5,
-    "collapsed": true
+    "width": 241.5
   },
   "right": {
     "id": "05def596bee7bffb",
@@ -157,8 +156,9 @@
       "mermaid-tools:Open Mermaid Toolbar": false
     }
   },
-  "active": "61f9f4d380a3827b",
+  "active": "24667f85de92ee11",
   "lastOpenFiles": [
+    "DSA/Notes/Combinatorics.md",
     "DSA/Notes/Dynamic Programming.md",
     "Redis/Planner.canvas",
     "Redis/Module 0 - Course objective.md",
