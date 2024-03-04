@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "DSA/Notes/Dynamic Programming.md",
+                "file": "DSA/Notes/Graphs.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "DSA/Notes/Dynamic Programming.md",
+                "file": "DSA/Notes/Graphs.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "DSA/Notes/Dynamic Programming.md",
+                "file": "DSA/Notes/Graphs.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "DSA/Notes/Dynamic Programming.md"
+                "file": "DSA/Notes/Graphs.md"
               }
             }
           },
@@ -138,7 +138,7 @@
             }
           }
         ],
-        "currentTab": 4
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
@@ -153,19 +153,27 @@
       "daily-notes:Open today's daily note": false,
       "templates:Insert template": false,
       "command-palette:Open command palette": false,
-      "mermaid-tools:Open Mermaid Toolbar": false
+      "mermaid-tools:Open Mermaid Toolbar": false,
+      "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
   "active": "24667f85de92ee11",
   "lastOpenFiles": [
-    "DSA/Notes/Combinatorics.md",
     "DSA/Notes/Dynamic Programming.md",
+    "DSA/Notes/Graphs.md",
+    "DSA/Notes/Greedy Algorithms.md",
+    "Pasted image 20240304221956.png",
+    "DSA/Notes/assets/Directed Graph.png",
+    "DSA/Notes/assets/Cyclic Graphs.png",
+    "DSA/Notes/assets/Graph.png",
+    "[.md",
+    "DSA/Notes/assets/Pasted image 20240304214755.png",
+    "DSA/Notes/Combinatorics.md",
+    "DSA/Notes/Things to remember.md",
     "Redis/Planner.canvas",
     "Redis/Module 0 - Course objective.md",
     "Redis/Course contents.md",
     "DSA/Notes/Miscellaneous.md",
-    "DSA/Notes/Things to remember.md",
-    "DSA/Notes/Greedy Algorithms.md",
     "DSA/Love Babbar/Arrays.md",
     "DSA/Notes/Bit Manipulation.md",
     "System Design/Distributed Caching.md",
@@ -185,17 +193,9 @@
     "DSA/Notes/assets/Pasted image 20240211223753.png",
     "DSA/Notes/assets/Pasted image 20240211220717.png",
     "DSA/Notes/assets/Pasted image 20240122225853.png",
-    "DSA/Notes/assets/Pasted image 20240122224855.png",
-    "DSA/Notes/assets/Pasted image 20240122211546.png",
     "DSA/Notes/Stacks & Queues.md",
-    "DSA/Notes/assets/Pasted image 20240120211056.png",
-    "DSA/Notes/assets/Pasted image 20240119225259.png",
     "DSA/Notes/Recursion.md",
     "DSA/Notes/Strings.md",
-    "DSA/Notes/Sorting.md",
-    "DSA/Notes/Searching.md",
-    "DSA/Notes/assets/tower_of_hanoi.png",
-    "Kanban/My Work items Kanban.md",
     "DSA/Notes/assets",
     "DSA/Notes",
     "DSA/Love Babbar",

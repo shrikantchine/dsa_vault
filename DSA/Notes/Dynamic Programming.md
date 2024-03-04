@@ -694,3 +694,219 @@ int maxHappiness(int[] H, int[] W, int C) {
 **Complexity**
 Time complexity: `O(N*C)`
 Space complexity: `O(C)`
+
+## Knapsack based problems
+
+### Rod Cutting
+
+**Problem Statement**
+
+Given a rod of length N & and array of length N.
+A[i] = price of rod length i (1-based index)
+Find the max price that can be obtained by cutting the rod into some pieces and selling them
+
+**Example**
+
+N = 5
+Index:   [1, 2, 3, 4, 5] => Represents length of piece
+Cost:    [1, 4, 2, 5, 6] => Represents prices
+
+| Cases     | Cost |
+| --------- | ---- |
+| 5         | 6    |
+| 4 + 1     | 6    |
+| 2 + 2 + 1 | 9    |
+| 3 + 2     | 6    |
+$\therefore$ The answer is 9
+
+**Solution using 2-D DP**
+
+- Choices: Sell a rod length with certain length or not
+- State: `DP[i][j] `represents the max cost for A[0..i-1] for length j
+- Recurrence relation:
+	$$
+	dp(i, j) = 
+		max
+		\begin{cases}
+		   dp(i, j-i) + A[i] &\text{if selected} \\
+		   dp(i-1, j) &\text{if not selected} \\
+		\end{cases}
+	$$
+- Which state is the answer ?  => `dp[N][N]`
+
+```java
+void maxRodCutting(int[] cost) {
+	int N = cost.length;
+	int[][] dp = new int[N+1][N+1];
+
+	for (int i=1; i<=N; i++) {
+		for (int j=1; j<=N; i++) {
+			if (j >= i) {
+				dp[i][j] = Math.max(dp[i-1][j], dp[i][j-i]+cost[i])
+			} else {
+				dp[i][j] = dp[i-1][j];
+			}
+		}
+	}
+
+	return dp[N][N];
+}
+```
+
+**Complexity analysis**
+Time complexity: O(N^2)
+Space complexity complexity: O(N^2)
+
+**Optimising using 1-D DP**
+
+In order to convert to 1-D DP, following steps can be used.
+
+- 
+
+
+### Coin Picking 1
+
+**Problem Statement**
+Given an integer array A representing coins.
+A[i] = Value of ith coin.
+One coin can be used multiple times
+Find no. of ways to sebudgetlect coins with sum = N.
+
+Ordered Selection = (x, y) != (y, x)
+Meaning (x, y) and (y, x) are considered two different ways.
+
+**Example**
+N = 5
+A = {3, 1, 4}
+Answer: 6
+How? : { {4, 1}, 
+		 {1, 4}, 
+		 {3, 1, 1},
+		 {1, 3, 1}, 
+		 {1, 1, 3}, 
+		 {1, 1, 1, 1, 1} 
+		}
+
+**Observation**
+- Similar to *Climbing stairs* problems except instead of two ways to climb, here we have many ways
+
+
+**Solution**
+
+- Choice: Select a coin or not
+- State: `DP[i]` represents number of ways to reach sum = i
+- Recurrence relation
+	$$
+		dp[i] = 
+		\begin{cases}
+		   1 &\text{if i = 0} \\
+		   \sum  dp[i-costs[j]] &\text{if i != 0 and i > costs[j]} \\
+		\end{cases}
+	$$
+- Answer state = `dp[sum]`
+- Overlapping sub problem = YES.
+
+```java
+int colorPicking(int[] coins, int sum) {
+	int N = coins.length;
+	int[] dp = new dp[sum+1];
+
+	dp[0] = 1 // 1 way to select sum = 0
+
+	for (int i=1; i<=sum; i++) {
+		int currentSum = 0;
+		for (int j=0; j<N; j++) {
+			if (i >= A[j]) {
+				currentSum += dp[i-A[j]];
+			}
+		}
+		dp[i] = currentSum;
+	}
+
+	return dp[sum];
+}
+```
+**Complexity analysis**
+Time complexity: `O(N*Sum)`
+Space complexity complexity: O(sum)
+
+**What if unordered selection is allowed**
+=> Meaning (x, y) = (y, x)
+
+- Now this becomes a 2D-DP where we need to keep track of indexes as well.
+
+> This code will not work. Fix it
+
+
+```java
+int coinPicking(int[] coins, int sum) {
+	int N = coins.length;
+	int[][] dp = new int[N][sum+1];
+
+	for (int i=0; i<N; i++) {
+		for (int j=1; j<=sum; j++) {
+			if (j >= coins[i]) {
+				dp[i][j] = dp[i-1][j] + dp[i][j-coins[i]];
+			}
+		}
+	}
+
+	return dp[N-1][sum];
+}
+```
+**Complexity analysis**
+Time complexity: `O(N*Sum)`
+Space complexity complexity: `O(N*sum)`
+
+### Knapsack - 3
+
+**Problem statement**
+
+Given N items with their values and weight. Find the maximum total value that can be obtained with weight <= K Each toy can be picked only once.
+
+Constraints:
+1 <= N <= 500
+1 <= V[i] <= 50
+1 <= W[i] <= 10^9
+1 <= K <= 10^9
+
+**Observation**
+- Similar to 0-1 knapsack (Time complexity: O(N * K))
+- But will give a time limit exceed error
+- To overcome this, we re-define the state as below
+
+`dp[i][j] = Using i items, get value j with min weight`
+
+```java
+int knapsack(int[] V, int[] W, int K) {
+	int N = V.length;
+	int[][] dp = new int[N+1][N*50+1]; //50 is worst case value of V from constraints
+
+	Arrays.fill(dp[0], Integer.MAX_VALUE); // Using 0 items, get j value is not possible.
+
+	for (int i=1; i<N; i++) {
+		dp[i][0] = 0; // Using i items, get 0 value => min weight = 0
+	}
+
+	for (int i=1; i<N; i++) {
+		for (int j=1; j<=V; j++) {
+			if (j >= V[i]) {
+				dp[i][j] = Math.min(dp[i-1][j], dp[i-1][j-V[i]] + W[i]);
+			} else {
+				dp[i][j] = dp[i-1][j];
+			}
+		}
+	}
+
+	for (int j=V; j>=0; j--) {
+		if (dp[N][j] <= K) {
+			return j;
+		}
+	}
+	return -1;
+}
+```
+
+**Complexity analysis**
+Time complexity: `O(N*N*max(V))`
+Space complexity complexity: `O(N*N*max(V))`

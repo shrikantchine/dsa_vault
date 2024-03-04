@@ -6,11 +6,11 @@
     "emojiStyle": "none",
     "iconColor": null,
     "recentlyUsedIcons": [
+      "FasChartPie",
       "FasM",
       "FasWandSparkles",
       "FasG",
-      "FasFolder",
-      "FasH"
+      "FasFolder"
     ],
     "recentlyUsedIconsSize": 5,
     "rules": [
@@ -58,5 +58,6 @@
   "DSA/Notes/Heap.md": "FasH",
   "DSA/Notes/Greedy Algorithms.md": "FasG",
   "DSA/Notes/Dynamic Programming.md": "FasWandSparkles",
-  "DSA/Notes/Miscellaneous.md": "FasM"
+  "DSA/Notes/Miscellaneous.md": "FasM",
+  "DSA/Notes/Graphs.md": "FasChartPie"
 }
