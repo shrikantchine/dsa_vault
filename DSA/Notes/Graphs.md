@@ -203,7 +203,7 @@ void dfs(List<List<Integer>> adjList, int source, boolean[] visisted) {
 ```
 **Complexity analysis**
 Time complexity: O(V+E)
-Space complexity: O(E)
+Space complexity: O(V)
 
 **Cycle detection in a graph**
 
@@ -234,5 +234,5 @@ boolean isCycle(List<List<Integer>> adjList, boolean[] visisted, int source, int
 
 **Complexity analysis**
 Time complexity: O(V+E)
-Space complexity: O(E)
+Space complexity: O(V)
 ### BFS (Breadth first search)
