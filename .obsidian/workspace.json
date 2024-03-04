@@ -69,7 +69,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 241.5
+    "width": 241.5,
+    "collapsed": true
   },
   "right": {
     "id": "05def596bee7bffb",
@@ -159,10 +160,11 @@
   },
   "active": "24667f85de92ee11",
   "lastOpenFiles": [
+    "DSA/Notes/assets/2-node-graph.png",
     "DSA/Notes/Dynamic Programming.md",
     "DSA/Notes/Graphs.md",
     "DSA/Notes/Greedy Algorithms.md",
-    "Pasted image 20240304221956.png",
+    "DSA/Notes/assets/Pasted image 20240304221956.png",
     "DSA/Notes/assets/Directed Graph.png",
     "DSA/Notes/assets/Cyclic Graphs.png",
     "DSA/Notes/assets/Graph.png",

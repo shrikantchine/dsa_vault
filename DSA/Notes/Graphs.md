@@ -125,13 +125,14 @@ $$
 | 0 | 0 | 0 | 0 | 1 | 1 | 0 |
 
 ```java
-int[][] buildAjdmatrix(int V, int[] E) {
+int[][] buildAjdMatrix(int V, int[][] E) {
 	int[][] matrix = new int[V+1][V+1];
 
 	for (int i=0; i<E.size(); i++) {
 		int source = E[i][0];
-		int desitnation = E[i][1];
+		int destination = E[i][1];
 		matrix[source][desitination] = 1;
+		matrix[destination][source] = 1; //Since it is a undirected graph
 	}
 	return matrix;
 }
@@ -149,3 +150,89 @@ Space complexity: O(n^2)
 **Disadvantages of adjacency matrix**
 1. Not space optimal
 2. Find neighbours is not constant.
+
+### Adjacency List
+
+- We only store relevant information
+- We create an array of size V (number of vertices). Each array element is an List of neighbours
+
+```java
+List<List<Integer>> buildAjdList(int V, int[][] E) {
+	List<List<Integer>> graph = new ArrayList<>();
+
+	for (int i=0; i<=V; i++) graph.add(new ArrayList<>());
+	
+	for (int i=0; i<E.length; i++) {
+		int source = E[i][0];
+		int destination = E[i][1];
+		
+		graph.get(source).add(destination);
+		graph.get(destination).add(source);
+	}
+	return graph;
+}
+
+```
+
+**Complexity analysis**
+Time complexity: O(E)
+Space complexity: O(V+E)
+
+## Traversals in a graph
+
+### DFS (Depth first search)
+
+- Traversal starts at a given `source` node
+- To keep track of nodes visited, we create a `boolean visited` array
+
+```java
+void dfs(List<List<Integer>> adjList, int source) {
+	boolean[] visisted = new boolean[adjList.size()];
+	dfs(adjList, source, visisted);
+}
+
+void dfs(List<List<Integer>> adjList, int source, boolean[] visisted) {
+	if (source == null) return;
+	System.out.println(source);
+	visited[source] = true;
+	for (int n : adjList.get(source)) {
+		if (visisted[n]) continue;
+		dfs(adjList, n, visited);
+	}
+}
+```
+**Complexity analysis**
+Time complexity: O(V+E)
+Space complexity: O(E)
+
+**Cycle detection in a graph**
+
+Approach 1: 
+	- Run DFS
+	- If at any point, the node that is being currently visited is already visited, cycle is present
+Issue with this approach is that it will return true for a 2 node graph undirected graph which has no cycle.
+
+![[2-node-graph.png]]
+
+Solution:
+- In the DFS algorithm, pass the parent as well
+- At each recursion iteration, check if node is not the parent.
+
+```java
+boolean isCycle(List<List<Integer>> adjList, boolean[] visisted, int source, int parent) {
+	visisted[source] = true;
+	for (int node : adjList.get(source)) {
+		if (visisted[node] && node != parent) return true;
+		if (!visisted[node]) {
+			boolean cycleFound = isCycle(adjList, visisted, node, source);
+			if (cycleFound) return true;
+		}
+	}
+	return false;
+} 
+```
+
+**Complexity analysis**
+Time complexity: O(V+E)
+Space complexity: O(E)
+### BFS (Breadth first search)
