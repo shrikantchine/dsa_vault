@@ -235,4 +235,176 @@ boolean isCycle(List<List<Integer>> adjList, boolean[] visisted, int source, int
 **Complexity analysis**
 Time complexity: O(V+E)
 Space complexity: O(V)
-### BFS (Breadth first search)
+
+## Connected components
+
+- Connected components of a graph is a single connected cluster of nodes.
+- A graph may have more than 1 connected components
+- A directed graph does not have a the concept of connected graphs.
+
+### Count Connected components
+
+- For each node, run the DFS
+- Increment the counter in the for loop because each iteration of a DFS algorithm represents another connected components.
+
+```java
+int countConnectedComponents(List<List<Integer>> adjList) {
+	boolean[] visisted = new boolean[adjList.size()+1];
+
+	int count = 0;
+	for (int i=1; i<visited.size(); i++) {
+		if (!visisted[i]) {
+			dfs(adjList, i, visisted);
+			count++;
+		}
+	}
+	return count;
+} 
+```
+
+**Complexity analysis**
+Time complexity: O(V+E) => Same as DFS
+Space complexity: O(V)
+
+
+## Strongly connected components
+
+![[StronglyDisconnectedDirectedGraph.png]]
+
+- Consider the above graph, since you cannot reach all nodes when you run any traversal with `3` as a starting node, this is called disconnected.
+- A strongly connected graph in strongly connected graph is a graph where we can reach all other nodes from any nodes.
+
+### Count number of islands
+
+**Problem Statement**
+
+Given an `NxN` matrix containing `0s` and `1s`. Zeros represents water and Ones represent island. 
+Count the islands.
+
+You can move up, down, left and right
+
+**Solution**
+
+- This is just like counting components
+- Use the same matrix as visited array by setting the value as 2 for visited.
+
+```java
+int countIslands(int[][] M) {
+	int count = 0, N = M.length;
+
+	for (int i=0; i<N; i++) {
+		for (int j=0; j<N; j++) {
+			if (M[i][j] == 1) {
+				dfs(M, i, j);
+				count++;
+			}
+		}
+	}
+
+	// reset matrix
+	for (int i=0; i<N; i++) {
+		for (int j=0; j<N; j++) {
+			if (M[i][j] == 2) M[i][j] = 1;
+		}
+	}
+	return count;
+}
+
+int[] rowModifier = new int[] { -1, 0, 1, 0 };
+int[] colModifier = new int[] { 0, -1, 0, 1 };
+
+void dfs(int[][] M, int row, int col) {
+	if (row < 0 || col < 0) return;
+	if (row >= M.length || col >= M.length) return;
+	if (M[row][col] != 1) return;
+
+	M[row][col] = 2;
+	for (int i=0; i<rowModifier.length; i++) {
+		dfs(M, row+rowModifier[i], col+colModifier[i]);
+	}
+}
+```
+
+
+> [!NOTE] Row and column Modifiers
+> - Note the way row and column values are adjusted in the above code.
+> - This allows for adding more directions like diagonals, 2 step movements easily without adding too many conditions.
+
+
+## Topological Sort
+
+- Only valid for Directed Acyclic graphs
+- Linear ordering of vertices such that for every directed edge (u, v), vertex u comes before vertex v
+
+**Use case**
+- Maven uses it sort dependencies
+- Schedulers use it schedule jobs
+
+**How does it work?**
+- Find the in-degree of each node. Represented by in-degree array
+- Maintain a set, only add a node to it when its in-degree becomes zero.
+
+```java
+int[] findInDegree(List<List<Integer>> adjList) {
+	int[] indegree = new int[adjList.size()];
+
+	for (int i=1 i<ajdList.size(); i++) {
+		for (int u : adjList.get(i)) {
+			indegree[u]++;
+		}
+	}
+	return indegree;
+}
+
+void topSort(List<List<Integer>> adjList) {
+	Queue<Integer> q = new LinkedList<>();
+
+	int[] indegree = findInDegree(adjList);
+
+	for (int i=1; i<indegree.length; i++) {
+		if (indegree[i] == 0) q.offer(i);
+	}
+
+	while (!q.isEmpty()) {
+		int node = q.poll();
+		System.out.println(node);
+		
+		for (int u : adjList.get(node)) {
+			indegree[u]--;
+			if (indegree[u] == 0) q.offer(node);
+		}
+	}
+}
+```
+
+
+>Home work
+>Do this with outdegree as well without creating a outdegree array
+
+## Disjoint Set Union
+
+- A *set* is a group of elements where no duplicates are allowed.
+- *Disjoint sets* is a pair of sets where are no common elements in them. In other words, there intersection is $\phi$
+
+###
+
+**Problem Statement**
+Given N elements - 1...N. Each element is different set.
+Also, given a set of queries such that.
+
+Q(u, v) => If u, v belong to different sets, merge (union) the two sets and return true. False otherwise.
+
+**Example:
+
+N = 5
+
+| Queries | Sets                        | Return value |
+| ------- | --------------------------- | ------------ |
+| Init    | `[[1], [2], [3], [4], [5]]` | NA           |
+| Q(1, 2) | `[[1, 2], [3], [4], [5]]`   | true         |
+| Q(4, 5) | `[[1, 2], [3], [4, 5]]`     | true         |
+| Q(4, 5) | `[[1, 2], [3], [4, 5]]`     | false        |
+
+**Observations**
+
+1. Merge Steps: 

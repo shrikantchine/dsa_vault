@@ -538,7 +538,7 @@ int findWays(int[][] A) {
 
 ## Knapsack problems
 
-Knapsack is a category for problem where we are given 2 types of arrays V & W where 
+Knapsack is a category forpace complexity of this problem is **O(B)**. problem where we are given 2 types of arrays V & W where 
 
 V[i] => Representing the profit/loss value of ith item
 W[i] => Representing the weight value of ith item
@@ -651,7 +651,7 @@ Space complexity: `O(N*C)`
 
 - Unlimited supply of each item is present.
 - In 0-1 knapsack, after processing the element (select or reject), the element is considered processed and cannot be selected again.
-- In 0-N knapsack, if we reject the element, it is considered processed but if we select an element, it is not considered processed because we can process it again.
+- In 0-N knapsack, if wepace complexity of this problem is **O(B)**. reject the element, it is considered processed but if we select an element, it is not considered processed because we can process it again.
 - So the recurrence relationship is
 
 $$
@@ -910,3 +910,23 @@ int knapsack(int[] V, int[] W, int K) {
 **Complexity analysis**
 Time complexity: `O(N*N*max(V))`
 Space complexity complexity: `O(N*N*max(V))`
+
+### Dungeon princess
+
+**Problem Statement**
+
+Given a matrix, some cells have demons who reduce your health, and healer in other cells who improve your energy. 
+
+Prince starts from (0, 0) and princess is at (n-1, m-1). What is the minimum energy does the prince start with to save the princess.
+
+Note that prince will die if his energy becomes zero.
+
+**Example**
+```
+A = [ 
+       [-2, -3, 3],
+       [-5, -10, 1],
+       [10, 30, -5]
+     ]
+Answer: 7
+```

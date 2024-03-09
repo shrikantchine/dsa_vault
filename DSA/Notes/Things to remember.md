@@ -84,6 +84,10 @@ s
 
 [[Dynamic Programming#Staircase]]
 
+## Catalan number
+
+
+
 ## 🌟 Important Links
 
 - 💡[yangshun tech-interview-handbook](https://github.com/yangshun/tech-interview-handbook)
