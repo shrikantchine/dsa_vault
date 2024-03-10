@@ -86,7 +86,19 @@ s
 
 ## Catalan number
 
-
+- Catalan number is a very important series in Combinatorics
+- Catalan number is a positive number which can be used to find number of possibilities of various combinations.
+- nth term is defined as
+	$$
+	 C_n = \cfrac{1}{n+1} \dbinom{2n}{n} = \cfrac{(2n)!}{(n+1)!n!}
+	$$
+- *Important applications*
+	- Number of BSTs with given number of nodes
+	- Number of full binary trees with given number of nodes.
+	- Finding number of valid parenthesis. Example: n=3, the number of valid parenthesis is 5 `((())), ()(()), ()()(), (())(), (()())`
+	- Number of ways a convex polygon of n+2 sides can split into triangles by connecting vertices.
+	- Number of unlabelled binary tree. https://www.geeksforgeeks.org/enumeration-of-binary-trees/
+	- 
 
 ## 🌟 Important Links
 

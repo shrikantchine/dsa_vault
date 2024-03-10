@@ -4,16 +4,16 @@
     "type": "split",
     "children": [
       {
-        "id": "dccd9927daa43a25",
+        "id": "5bad87545e34290b",
         "type": "tabs",
         "children": [
           {
-            "id": "2510f9452dde13d7",
+            "id": "d78dbf8797c227c6",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "DSA/Notes/Miscellaneous.md",
+                "file": "DSA/Notes/Things to remember.md",
                 "mode": "source",
                 "source": false
               }
@@ -65,13 +65,11 @@
               "state": {}
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
-    "width": 241.5,
-    "collapsed": true
+    "width": 241.5
   },
   "right": {
     "id": "05def596bee7bffb",
@@ -87,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "DSA/Notes/Miscellaneous.md",
+                "file": "DSA/Notes/Things to remember.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "DSA/Notes/Miscellaneous.md",
+                "file": "DSA/Notes/Things to remember.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -127,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "DSA/Notes/Miscellaneous.md"
+                "file": "DSA/Notes/Things to remember.md"
               }
             }
           },
@@ -159,12 +157,12 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "2510f9452dde13d7",
+  "active": "d78dbf8797c227c6",
   "lastOpenFiles": [
+    "DSA/Notes/Modular Arithmetic and GCD.md",
     "DSA/Notes/Things to remember.md",
     "DSA/Notes/Miscellaneous.md",
     "DSA/Notes/Dynamic Programming.md",
-    "DSA/Notes/Modular Arithmetic and GCD.md",
     "DSA/Notes/Interview Questions.md",
     "DSA/Notes/Graphs.md",
     "DSA/Notes/assets/StronglyDisconnectedDirectedGraph.png",
